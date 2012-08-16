@@ -25,3 +25,7 @@ When your application is shutting down, stop the LifecycleManager so that @CoolD
 ```java
 manager.close();
 ```
+
+h2. AutoBindSingleton
+
+While Guice has some support for automatic binding (Just in Time - JIT - binding), it's functionality is limited. Further, many Guice users turn off JIT and require explicit binding. 
