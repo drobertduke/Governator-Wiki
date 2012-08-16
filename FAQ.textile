@@ -6,3 +6,6 @@ h3. Aren't there other libraries that do this?
 
 Yes. There are several Guice extensions that do some of these things. 
 
+h3. Can I use this in Spring?
+
+With a small amount of work, Governator can be used with Spring. Details here: [[Spring]].
