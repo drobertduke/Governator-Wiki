@@ -1,6 +1,4 @@
-h1. temp
-
-h1. What is Governator?
+h2. What is Governator?
 
 Governator is a library of extensions and utilities that extend "Google Guice":https://code.google.com/p/google-guice/ to provide:
 
@@ -11,7 +9,7 @@ Governator is a library of extensions and utilities that extend "Google Guice":h
 * Field validation
 * Parallelized object warmup/cooldown
 
-h1. Features
+h2. Features
 
 h3. Classpath scanning and automatic binding
 
@@ -37,15 +35,15 @@ h3. Parallelized object warmup/cooldown
 
 Governator introduces two new annotations <code>WarmUp</code> and <code>CoolDown</code>. Methods annotated with <code>WarmUp</code> will get executed (in parallel) after injected by Guice. Methods annotated with <code>CoolDown</code> will get executed (in parallel) when the Governator Lifecycle is shut down.
  
-h1. Requirements/Prerequisites
+h2. Requirements/Prerequisites
 
 It's assumed that you are familiar with Google Guice.
 
-h1. Acknowledgements
+h2. Acknowledgements
 
 Governator is based on ideas developed for the "Proofpoint Platform":https://github.com/proofpoint/platform library.
 
-h1. Maven / Artifacts
+h2. Maven / Artifacts
 
 Governator binaries are published to Maven Central.
 
