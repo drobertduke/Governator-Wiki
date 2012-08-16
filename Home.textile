@@ -20,3 +20,8 @@ Governator introduces a new annotation <code>AutoBindSingleton</code>. Governato
 h3. Lifecycle management
 
 Governator adds support for the standard annotations: <code>PostConstruct</code> and <code>PreDestroy</code>.
+
+h3. Configuration to field mapping
+
+Governator introduces a new annotation <code>Configuration</code> that can be used to annotate class fields. Governator will assign the fields using configuration from property files, etc.
+
