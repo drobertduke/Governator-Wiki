@@ -1,14 +1,14 @@
 Guice users are familiar with the "binding phase" where Guice calls your modules to register bindings. You then create the Injector as a second phase. Governator introduces several new phases. The timeline is like this:
 
-* Classpath scanning phase
+# Classpath scanning phase
 ** Specified packages are scanned for Governator annotations
 ** The classes are stored for later phases
-* Bootstrapping phase
+# Bootstrapping phase
 ** Application bootstrap modules are invoked
 ** Auto bind AssetLoaders are bound
 ** The auto bind ConfigurationProvider (if one is found) is bound
 ** The LifecycleManager is created via the bootstrap Injector
-* Main Injector phase
+# Main Injector phase
 ** Application provided modules are added
 ** AutoBindSingletons are bound
 ** Main Injector is created
@@ -16,7 +16,7 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 ### RequiredAssets are loaded
 ### Configuration values are set
 ### PostConstruct methods are called
-* Start phase
+# Start phase
 ** The application calls LifecycleManager.start()
 ** Bean/field validation is done
 ** Any WarmUp methods are executed in background threads
