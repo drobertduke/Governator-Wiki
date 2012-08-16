@@ -42,6 +42,7 @@ h2. Next Steps
 
 Governator has many more features than the above. See the feature specific wikis to learn more detail about the above features or additional features:
 
+* [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[WarmUp and CoolDown]]
 * [[Autobinding]]
