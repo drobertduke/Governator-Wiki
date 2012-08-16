@@ -11,7 +11,7 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 # Main Injector phase
 ** Application provided modules are added
 ** AutoBindSingletons are bound
-** Main Injector is created
+** The main Injector is created
 ** As each object is created by Guice:
 ### RequiredAssets are loaded
 ### Configuration values are set
