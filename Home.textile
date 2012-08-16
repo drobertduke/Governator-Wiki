@@ -45,5 +45,5 @@ h1. Maven / Artifacts
 
 Governator binaries are published to Maven Central.
 
-*GroupID/Org:* com.netflix.governator<br>
-*ArtifactID/Name:* governator
+|*GroupID/Org*|com.netflix.governator|
+|*ArtifactID/Name*|governator|
