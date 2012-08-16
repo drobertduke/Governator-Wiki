@@ -10,7 +10,7 @@ Bootstrapping is part of the classpath scanning step:
 
 * Classes annotated with @RequiredAsset are examined to determine the specified AssetLoader class. A singleton binding is added to the bootstrap Injector for this AssetLoader.
 * ConfigurationProvider and AssetLoader classes annotated with @AutoBindSingleton are detected and bound into the bootstrap Injector.
-* Any application specific bootstrap binding is done via the specified bootstrap module (if any).
+* Application specific bootstrap binding is done via the specified bootstrap module (if any).
 
 You can specify your own bootstrap bindings if needed by specifying a bootstrap module:
 
