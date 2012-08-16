@@ -38,3 +38,13 @@ LifecycleInjector.builder().usingBasePackages(yourPackages)
 
 All classes in the specified packages (searched recursively) annotated with @AutoBindSingleton are bound as Guice singletons. By default, the binding is _lazy_. i.e. the singleton is only created if it's needed (as an injection into another instance, etc.). However, each @AutoBindSingleton can optionally be set as an eager singleton.
 
+h2. Next Steps
+
+Governator has many more features than the above. See the feature specific wikis to learn more detail about the above features or additional features:
+
+* [[Lifecycle Management]]
+* [[WarmUp and CoolDown]]
+* [[Autobinding]]
+* [[Configuration Mapping]]
+* [[Field Validation]]
+* [[Asset Loading]]
