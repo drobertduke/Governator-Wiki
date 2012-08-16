@@ -43,7 +43,7 @@ It's assumed that you are familiar with Google Guice.
 
 h1. Acknowledgements
 
-Governator is based on ideas developed for the Proofpoint Platform: https://github.com/proofpoint/platform
+Governator is based on ideas developed for the "Proofpoint Platform":https://github.com/proofpoint/platform
 
 h1. Maven / Artifacts
 
