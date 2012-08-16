@@ -28,4 +28,10 @@ manager.close();
 
 h2. AutoBindSingleton
 
-While Guice has some support for automatic binding (Just in Time - JIT - binding), it's functionality is limited. Further, many Guice users turn off JIT and require explicit binding. 
+While Guice has some support for automatic binding (Just in Time - JIT - binding), it's functionality is limited. Further, many Guice users turn off JIT and require explicit binding. Governator normalizes automatic binding via classpath scanning and the @AutoBindSingleton annotation.
+
+Classpath scanning is done in a manner similar to "Jersey":http://jersey.java.net/ scanning. You specify a set of base packages and the Classpath is scanned for matching classes. 
+
+```java
+LifecycleInjector.builder().usingBasePackages(yourPackages)
+```
