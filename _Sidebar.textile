@@ -1,6 +1,7 @@
 * [[Home]]
 * [[Getting Started]]
 * [[FAQ]]
+* [[Governator Phases]]
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[WarmUp and CoolDown]]
