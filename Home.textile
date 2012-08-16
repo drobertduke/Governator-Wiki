@@ -31,7 +31,7 @@ Governator introduces a new annotation <code>RequiredAsset</code> that can be us
 
 h3. Field validation
 
-Governator supports the <code>javax.validation</code> annotations. Fields annotated with validation annotations will get validated by using the "Hibernate Validator":https://github.com/hibernate/hibernate-validator
+Governator supports the <code>javax.validation</code> annotations (JSR 303). Fields annotated with validation annotations will get validated by using the "Hibernate Validator":https://github.com/hibernate/hibernate-validator library.
 
 h3. Parallelized object warmup/cooldown
 
