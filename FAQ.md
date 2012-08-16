@@ -1,1 +1,8 @@
-TBD
+h3. Why is Governator needed?
+
+Unlike other IoC containers, Guice does not handle: classpath scanning, lifecycle annotations, configuration/properties, validation, etc.
+
+h3. Aren't there other libraries that do this?
+
+Yes. There are several Guice extensions that do some of these things. 
+
