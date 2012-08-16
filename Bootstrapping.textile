@@ -1,1 +1,19 @@
-TBD
+Governator creates two Guice injectors: an internal "bootstrapping" Injector and the main application Injector. The main Injector is created when you call <code>LifecycleInjectorBuilder.createInjector()</code>. The bootstrapping injector is created internally by Governator.
+
+h3. Why two Injectors?
+
+Several Governator features introduce recursive dependencies. [[Asset loading]] and [[configuration mapping]] require <code>AssetLoader</code> and <code>ConfigurationProvider</code> instances. These instances are needed as the main Injector is being created (i.e. as Guice is creating instances). 
+
+h3. Bootstrapping Steps
+
+Bootstrapping is part of the classpath scanning step:
+
+* Classes annotated with @RequiredAsset are examined to determine the specified AssetLoader class. A singleton binding is added to the bootstrap Injector for this AssetLoader.
+* ConfigurationProvider and AssetLoader classes annotated with @AutoBindSingleton are detected and bound into the bootstrap Injector.
+* Any application specific bootstrap binding is done via the specified bootstrap module (if any).
+
+You can specify your own bootstrap bindings if needed by specifying a bootstrap module:
+
+```java
+LifecycleInjector.builder().withBootstrapModule(yourBootstrapModule)
+```
