@@ -1,6 +1,7 @@
 * [[Home]]
 * [[Getting Started]]
 * [[FAQ]]
+* [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[WarmUp and CoolDown]]
 * [[Autobinding]]
