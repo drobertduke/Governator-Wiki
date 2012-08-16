@@ -18,4 +18,4 @@ LifecycleManager    manager = injector.getInstance(LifecycleManager.class);
 manager.start();
 ```
 
-Starting the Governator LifecycleManager causes field validation to be processed and the Governator @WarmUp methods o get executed.
+Starting the Governator LifecycleManager causes field validation to be processed and the Governator @WarmUp methods to get executed.
