@@ -19,3 +19,9 @@ manager.start();
 ```
 
 Starting the Governator LifecycleManager causes field validation to be processed and the Governator @WarmUp methods to get executed.
+
+When your application is shutting down, stop the LifecycleManager so that @CoolDown and @PreDestroy methods are executed.
+
+```java
+manager.close();
+```
