@@ -36,4 +36,5 @@ Classpath scanning is done in a manner similar to "Jersey":http://jersey.java.ne
 LifecycleInjector.builder().usingBasePackages(yourPackages)
 ```
 
-All classes in the specified packages (searched recursively) annotated with @AutoBindSingleton are bound as Guice Singletons. By default, the binding is *lazy*. i.e. the singleton is only created if it's needed (as an injection into another instance, etc.). However, the @AutoBindSingleton can optionally be set as eager singletons.
+All classes in the specified packages (searched recursively) annotated with @AutoBindSingleton are bound as Guice singletons. By default, the binding is _lazy_. i.e. the singleton is only created if it's needed (as an injection into another instance, etc.). However, each @AutoBindSingleton can optionally be set as an eager singleton.
+
