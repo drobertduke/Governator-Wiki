@@ -1,5 +1,6 @@
 Governator is mostly transparent. Use Guice as you normally would but with enhanced features. The major difference is that you now create the Injector through Governator. 
 
 ```java
-Injector    injector = LifecycleInjector.builder().withModules(yourModules).createInjector();
+Injector    injector = LifecycleInjector.builder()
+    .withModules(yourModules).createInjector();
 ```
