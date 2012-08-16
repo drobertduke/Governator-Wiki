@@ -1,5 +1,10 @@
-*Governator*<br>
 * [[Home]]
 * [[Getting Started]]
 * [[FAQ]]
+* [[Lifecycle Management]]
+* [[WarmUp and CoolDown]]
+* [[Autobinding]]
+* [[Configuration Mapping]]
+* [[Field Validation]]
+* [[Asset Loading]]
 * [[Spring]]
