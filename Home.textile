@@ -27,7 +27,7 @@ Governator introduces a new annotation <code>Configuration</code> that can be us
 
 h3. Asset/property loading
 
-Governator introduces a new annotation <code>RequiredAsset</code> that can be used to annotate classes. Governator will load the asset (e.g. a property file, etc.) when instances of the class are injected by Guice.
+Governator introduces a new annotation <code>RequiredAsset</code> that can be used to annotate classes. Governator will load the asset (e.g. a property file, certificate, etc.) when instances of the class are injected by Guice.
 
 h3. Field validation
 
