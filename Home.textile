@@ -33,3 +33,7 @@ h3. Field validation
 
 Governator supports the <code>javax.validation</code> annotations. Fields annotated with validation annotations will get validated by using the "Hibernate Validator":https://github.com/hibernate/hibernate-validator
 
+h3. Parallelized object warmup/cooldown
+
+Governator introduces two new annotations <code>WarmUp</code> and <code>CoolDown</code>. Methods annotated with <code>WarmUp</code> will get executed (in parallel) after injected by Guice. Methods annotated with <code>CoolDown</code> will get executed (in parallel) when the Governator Lifecycle is shut down.
+ 
