@@ -1,0 +1,10 @@
+Governator supports "JSR 303 - Bean Validation":http://jcp.org/en/jsr/detail?id=303 by passing injected instances through the "Hibernate Validator":http://www.hibernate.org/subprojects/validator.html
+
+All validation errors are thrown as the Governator exception: <code>ValidationException</code>
+
+Example:
+
+```java
+@Min(5)
+private int   myInt;  // ValidationException is thrown if this is less than 5
+```
