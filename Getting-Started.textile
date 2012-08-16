@@ -8,3 +8,14 @@ Injector    injector = LifecycleInjector.builder()
 ```
 
 By creating your Injector this way @PostProcess annotations will be processed. 
+
+h2. Just a Bit More
+
+By adding two more lines of code a number of other Governator enhancements are enabled.
+
+```java
+LifecycleManager    manager = injector.getInstance(LifecycleManager.class);
+manager.start();
+```
+
+Starting the Governator LifecycleManager causes field validation to be processed and the Governator @WarmUp methods o get executed.
