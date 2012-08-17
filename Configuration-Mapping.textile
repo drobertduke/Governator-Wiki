@@ -1,1 +1,6 @@
-TBD
+As part of initializing an object, Governator can assign configuration values to object fields. To use this feature, you must bind an instance that implements ConfigurationProvider (Governator provides a few default implementations to use) and annotate fields with @Configuration.
+
+h2. ConfigurationProvider
+
+The ConfigurationProvider is used to provide configuration values from configuration names as specified by @Configuration annotations. Governator bundles two implementations that you can use: SystemConfigurationProvider and PropertiesConfigurationProvider. SystemConfigurationProvider returns System properties (via <code>System.getProperty()</code>). PropertiesConfigurationProvider returns values from a Properties object (via <code>Properties.getProperty()</code>). Additionally, CompositeConfigurationProvider can be used to chain ConfigurationProviders together.
+
