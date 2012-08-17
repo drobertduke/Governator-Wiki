@@ -1,4 +1,4 @@
-Sometimes a class will have a dependency that can't be coded as a direct dependency - i.e. there is object that represents the dependency. One could write a scaffold class to denote the dependency but that is clumsy as the scaffold instance would never get used.
+Sometimes a class will have a dependency that can't be coded as a direct dependency - i.e. there is no object that represents the dependency. One could write a scaffold class to denote the dependency but that is clumsy as the scaffold instance would never get used.
 
 E.g. clumsy method of asset loading:
 
