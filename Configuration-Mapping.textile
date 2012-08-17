@@ -45,7 +45,7 @@ Governator provides a documentation mechanism for configuration. When LifecycleM
 @Configuration
 (
     value = "configs.qty.things", 
-    documentation="This controls the number of things used."
+    documentation = "This controls the number of things used."
 )
 private int   numberOfThings = 10;
 ```
