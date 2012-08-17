@@ -4,3 +4,24 @@ h2. ConfigurationProvider
 
 The ConfigurationProvider is used to provide configuration values from configuration names as specified by @Configuration annotations. Governator bundles two implementations that you can use: SystemConfigurationProvider and PropertiesConfigurationProvider. SystemConfigurationProvider returns System properties (via <code>System.getProperty()</code>). PropertiesConfigurationProvider returns values from a Properties object (via <code>Properties.getProperty()</code>). Additionally, CompositeConfigurationProvider can be used to chain ConfigurationProviders together.
 
+There are two ways to identify the ConfigurationProvider to Governator:
+
+* Annotate the ConfigurationProvider with @AutoBindSingleton (making sure it is in the set of packages passed to the classpath scanner).
+* Bind the ConfigurationProvider in the bootstrap module.
+
+Here is an example of binding in the bootstrap module:
+
+```java
+LifecycleInjector.builder()
+    .withBootstrapModule
+    (
+        new BootstrapModule()
+        {
+            @Override
+            public void configure(Binder binder, RequiredAssetBinder requiredAssetBinder)
+            {                            
+               binder.bind(ConfigurationProvider.class).to(MyProvider.class).asEagerSingleton();
+            }
+        }
+    )
+```
