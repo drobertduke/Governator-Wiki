@@ -1,1 +1,18 @@
-TBD
+Sometimes a class will have a dependency that can't be coded as a direct dependency - i.e. there is object that represents the dependency. One could write a scaffold class to denote the dependency but that is clumsy as the scaffold instance would never get used.
+
+E.g. clumsy method of asset loading:
+
+```java
+public class MyAssetLoader
+{
+   // ... code to load the asset goes here
+}
+
+public class Foo
+{
+    @Inject
+    public Foo(MyAssetLoader loader){}
+}
+```
+
+The MyAssetLoader injected into Foo exists only so that Guice will instantiate MyAssetLoader and, thus, cause the loading code to execute. Foo will never execute any methods of MyAssetLoader.
