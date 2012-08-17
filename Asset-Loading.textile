@@ -16,3 +16,15 @@ public class Foo
 ```
 
 The MyAssetLoader injected into Foo exists only so that Guice will instantiate MyAssetLoader and, thus, cause the loading code to execute. Foo will never execute any methods of MyAssetLoader.
+
+Governator introduces a method to declare dependencies of this type. The declaration is done via the @RequiredAsset annotation. In the above example, instead of creating the awkward MyAssetLoader class and injecting it into Foo, you would annotate Foo as requiring an asset:
+
+```java
+@RequiredAsset("My Asset")
+public class Foo
+{
+    // ...
+}
+```
+
+Governator will load the required asset by using a bound AssetLoader instance. Additionally, you can bind optional parameters for asset loaders to customize loading behavior.
