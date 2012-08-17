@@ -25,3 +25,14 @@ LifecycleInjector.builder()
         }
     )
 ```
+
+h2. @Configuration
+
+Fields annotated with @Configuration will get assigned configuration values based on the type of the field and the value set in the annotation. Here's an example:
+
+```java
+@Configuration("configs.qty.things")
+private int   numberOfThings = 10;
+```
+
+For the above, Governator will call ConfigurationProvider.has("configs.qty.things"). If it returns false, "numberOfThings" will stay set to 10 - i.e. 10 is the default value. If it returns true, "numberOfThings" is assigned the value returned by ConfigurationProvider.getInteger("configs.qty.things"). If "numberOfThings" was a String, ConfigurationProvider.getString("configs.qty.things") would be called, etc.
