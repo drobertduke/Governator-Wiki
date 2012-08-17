@@ -1,4 +1,4 @@
-In addition to the standard lifecycle annotations @PostConstruct and @PreDestory, Governator adds two new ones:
+In addition to the standard lifecycle annotations @PostConstruct and @PreDestroy, Governator adds two new ones:
 
 * @WarmUp
 * @CoolDown
