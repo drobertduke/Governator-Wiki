@@ -1,3 +1,5 @@
+_Yah - PostConstruct me now unt PreDestroy me later_
+
 h2. What is Governator?
 
 Governator is a library of extensions and utilities that extend "Google Guice":https://code.google.com/p/google-guice/ to provide:
