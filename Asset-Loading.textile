@@ -1,3 +1,5 @@
+h2. Introduction
+
 Sometimes a class will have a dependency that can't be coded as a direct dependency - i.e. there is no object that represents the dependency. One could write a scaffold class to denote the dependency but that is clumsy as the scaffold instance would never get used.
 
 E.g. clumsy method of asset loading:
@@ -28,3 +30,12 @@ public class Foo
 ```
 
 Governator will load the required asset by using a bound AssetLoader instance. Additionally, you can bind optional parameters for asset loaders to customize loading behavior.
+
+h2. Required Asset Examples
+
+Some examples of required assets are:
+
+* Property files: .property files that need to be loaded for an object
+* Certificates: SSL certs, etc. that need to be loaded and initialized for an object
+* Clean up tasks: background tasks that need to be started for a set of objects
+* Etc.
