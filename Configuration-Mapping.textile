@@ -36,3 +36,20 @@ private int   numberOfThings = 10;
 ```
 
 For the above, Governator will call ConfigurationProvider.has("configs.qty.things"). If it returns false, "numberOfThings" will stay set to 10 - i.e. 10 is the default value. If it returns true, "numberOfThings" is assigned the value returned by ConfigurationProvider.getInteger("configs.qty.things"). If "numberOfThings" was a String, ConfigurationProvider.getString("configs.qty.things") would be called, etc.
+
+h2. Configuration Documentation
+
+Governator provides a documentation mechanism for configuration. When LifecycleManager.start() is called (after configuration assignments) Governator will log detailed information about the configuration values used in your application. In support of this, you should specify descriptive documentation in your @Configuration annotations via the optional documentation property. E.g.
+
+```java
+@Configuration(value = "configs.qty.things", documentation="This controls the number of things used.")
+private int   numberOfThings = 10;
+```
+
+The configuration logging looks like this:
+
+<pre>
+PROPERTY     FIELD               DEFAULT    VALUE           DESCRIPTION           
+prop.name.1  com.foo.Bar#aBool   false      true            This is a boolean     
+other.prop   com.foo.Bar#xyz     something  another thing   This does something
+</pre>
