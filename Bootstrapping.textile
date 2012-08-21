@@ -17,3 +17,7 @@ You can specify your own bootstrap bindings if needed by specifying a bootstrap 
 ```java
 LifecycleInjector.builder().withBootstrapModule(yourBootstrapModule)
 ```
+
+h3. Completion
+
+At the end of Bootstrapping, Governator creates the bootstrap injector and gets the LifecycleManager instance which manages the main injection phase. Any bound asset loaders or configuration providers are injected into the LifecycleManager.
