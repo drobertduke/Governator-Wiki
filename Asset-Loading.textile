@@ -105,6 +105,42 @@ When Guice injects MyClass, Governator will call MyAssetLoader with "myPropertie
 
 h2. AssetLoader Parameters
 
-You can use standard Guice methods of specifying parameters/options for an AssetLoader. However, Governator has a preferred method that is somewhat simpler. Use <code>BootstrapBinder.bindAssetParameter()</code> to set a parameter for a specific asset name. AssetLoader instances can then examine that parameter by injecting all asset parameters. 
+You can use standard Guice methods of specifying parameters/options for an AssetLoader. However, Governator has a preferred method that is somewhat simpler. Use <code>BootstrapBinder.bindAssetParameter()</code> to set a parameter for a specific asset name. AssetLoader instances can then examine that parameter by injecting all asset parameters as maps from asset name to parameter.
 
-TBD
+For example, to support an optional String parameter for an asset loader:
+
+```java
+public class MyAssetLoader implements AssetLoader
+{
+    @Inject(optional = true)
+    private Map<String, String> parameters = new HashMap<String, String>();
+    ...
+
+    public void     loadAsset(String name) throws Exception
+    {
+        String optionalValue = parameters.get(name);
+        ...
+    }
+}
+```
+
+In the above, "parameters" is marked optional. Guice will only inject if a binding is explicitly made - otherwise the field is left unchanged (i.e. it will be the map in the assignment).
+
+Governator has a method for setting asset loader parameters during [[Bootstrapping]]. Use the BootstrapBinder. In this example:
+
+```java
+        Injector        injector = LifecycleInjector.builder()
+            .withBootstrapModule
+            (
+                new BootstrapModule()
+                {
+                    @Override
+                    public void configure(BootstrapBinder binder)
+                    {
+                        // binds an optional parameter for the asset named "test"
+                        binder.bindAssetParameter("test", String.class).toInstance("Whatever");
+                    }
+                }
+            )
+            ...
+```
