@@ -79,3 +79,11 @@ Governator chooses the asset loader in the following way:
 # If an asset loader is bound for the specific asset name, it is used ignoring any other binding.
 # If the @RequiredAsset annotation has a loader specified, it is used
 # Lastly, the default asset loader is used
+
+h2. AssetLoader Parameters
+
+You can use standard Guice methods of specifying parameters/options for an AssetLoader. However, Governator has a preferred method that is somewhat simpler. Use <code>BootstrapBinder.bindAssetParameter()</code> to set a parameter for a specific asset name. AssetLoader instances can then examine that parameter by injecting all asset parameters. 
+
+For example, to write an AssetLoader 
+
+TBD
