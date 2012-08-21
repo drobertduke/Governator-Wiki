@@ -39,3 +39,43 @@ Some examples of required assets are:
 * Certificates: SSL certs, etc. that need to be loaded and initialized for an object
 * Clean up tasks: background tasks that need to be started for a set of objects
 * Etc.
+
+h2. RequiredAssets and AssetLoaders
+
+RequiredAssets are processed via instances of <code>AssetLoader</code>:
+
+```java
+/**
+ * Abstraction for loading classes annotated with {@link RequiredAsset}
+ */
+public interface AssetLoader
+{
+    /**
+     * Called to load the named asset
+     *
+     * @param name name of the asset
+     */
+    public void     loadAsset(String name) throws Exception;
+
+    /**
+     * Called to unload the named asset
+     *
+     * @param name name of the asset
+     */
+    public void     unloadAsset(String name) throws Exception;
+}
+```
+
+Which asset loader is used depends on your binding choices during [[Bootstrapping]]. You can bind a default asset loader by using <code>BootstrapBinder.bindDefaultAssetLoader()</code>. You can also specify an asset loader as an optional argument to the @RequiredAsset annotation:
+
+```java
+@RequiredAsset(value = "my name", loader = MyAssetLoader.class)
+```
+
+Lastly, you can bind an AssetLoader for a specific asset name via <code>BootstrapBinder.bindAssetLoader(String assetName)</code>.
+
+Governator chooses the asset loader in the following way:
+
+# If an asset loader is bound for the specific asset name, it is used ignoring any other binding.
+# If the @RequiredAsset annotation has a loader specified, it is used
+# Lastly, the default asset loader is used
