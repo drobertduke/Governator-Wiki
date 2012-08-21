@@ -48,4 +48,3 @@ Governator has many more features than the above. See the feature specific wikis
 * [[Autobinding]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
-* [[Asset Loading]]
