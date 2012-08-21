@@ -93,7 +93,7 @@ public class MyAssetLoader implements AssetLoader
 }
 ```
 
-Given this, classes can specify that they required properties files to be loaded. E.g.
+Given this, classes can specify that they require properties files to be loaded. E.g.
 
 ```java
 @RequiredAsset(value = "myProperties.txt", loader = MyAssetLoader.class)
