@@ -12,6 +12,7 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 ** AutoBindSingletons are bound
 ** The main Injector is created
 ** As each object is created by Guice:
+### PreConfiguration methods are called
 ### Configuration values are set
 ### PostConstruct methods are called
 # Start phase
