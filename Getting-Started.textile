@@ -7,7 +7,7 @@ Injector    injector = LifecycleInjector.builder()
     .withModules(yourModules).createInjector();
 ```
 
-By creating your Injector this way @PostProcess annotations will be processed. 
+By creating your Injector this way various special annotations (@PostConstruct, etc.) will be processed. 
 
 h2. Just a Bit More
 
