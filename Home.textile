@@ -15,7 +15,7 @@ h2. Features
 
 h3. Classpath scanning and automatic binding
 
-Governator introduces a new annotation <code>AutoBindSingleton</code>. Governator will scan the Classpath to find classes annotated with AutoBindSingleton and bind them as Singletons.
+Governator introduces a new annotation <code>AutoBindSingleton</code>. Governator will scan the Classpath to find classes annotated with AutoBindSingleton and bind them as eager Singletons.
 
 h3. Lifecycle management
 
