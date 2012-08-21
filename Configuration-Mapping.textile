@@ -26,6 +26,18 @@ LifecycleInjector.builder()
     )
 ```
 
+h3. @PreConfiguration
+
+You can annote methods to get called prior to configuration mapping. E.g.:
+
+```java
+@PreConfiguration
+public void myConfigurationLoader()
+{
+   // gets called prior to configuration mapping and prior to PostConstruct methods
+}
+```
+
 h2. @Configuration
 
 Fields annotated with @Configuration will get assigned configuration values based on the type of the field and the value set in the annotation. Here's an example:
