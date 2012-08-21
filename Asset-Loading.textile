@@ -80,10 +80,31 @@ Governator chooses the asset loader in the following way:
 # If the @RequiredAsset annotation has a loader specified, it is used
 # Lastly, the default asset loader is used
 
+Here's an example AssetLoader that reads a property file and adds all the values to the System properties:
+
+```java
+public class MyAssetLoader implements AssetLoader
+{
+    public void     loadAsset(String name) throws Exception
+    {
+        Properties    p = loadPropertiesFile(name); // call method to load properties file 
+        System.setProperties(p);
+    }
+}
+```
+
+Given this, classes can specify that they required properties files to be loaded. E.g.
+
+```java
+@RequiredAsset(value = "myProperties.txt", loader = MyAssetLoader.class)
+public class MyClass
+    ...
+```
+
+When Guice injects MyClass, Governator will call MyAssetLoader with "myProperties.txt" prior to calling an methods marked with @PostConstruct.
+
 h2. AssetLoader Parameters
 
 You can use standard Guice methods of specifying parameters/options for an AssetLoader. However, Governator has a preferred method that is somewhat simpler. Use <code>BootstrapBinder.bindAssetParameter()</code> to set a parameter for a specific asset name. AssetLoader instances can then examine that parameter by injecting all asset parameters. 
-
-For example, to write an AssetLoader 
 
 TBD
