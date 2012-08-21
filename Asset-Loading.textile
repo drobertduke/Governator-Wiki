@@ -101,7 +101,7 @@ public class MyClass
     ...
 ```
 
-When Guice injects MyClass, Governator will call MyAssetLoader with "myProperties.txt" prior to calling an methods marked with @PostConstruct.
+When Guice injects MyClass, Governator will call MyAssetLoader with "myProperties.txt" prior to calling any methods marked with @PostConstruct.
 
 h2. AssetLoader Parameters
 
