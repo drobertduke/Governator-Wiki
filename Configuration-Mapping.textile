@@ -20,7 +20,7 @@ LifecycleInjector.builder()
             @Override
             public void configure(Binder binder, RequiredAssetBinder requiredAssetBinder)
             {                            
-               binder.bind(ConfigurationProvider.class).to(MyProvider.class).asEagerSingleton();
+               binder.bindConfigurationProvider().to(MyProvider.class);
             }
         }
     )
