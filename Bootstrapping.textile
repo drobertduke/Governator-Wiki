@@ -2,7 +2,7 @@ Governator creates two Guice injectors: an internal "bootstrapping" Injector and
 
 h3. Why two Injectors?
 
-Several Governator features introduce recursive dependencies. [[Asset loading]] and [[configuration mapping]] require <code>AssetLoader</code> and <code>ConfigurationProvider</code> instances. These instances are needed as the main Injector is being created (i.e. as Guice is creating instances). 
+Governator features introduce recursive dependencies. [[configuration mapping]] and the LifecycleManager instance and <code>ConfigurationProvider</code> instances. These instances are needed as the main Injector is being created (i.e. as Guice is creating instances). 
 
 h3. Bootstrapping Steps
 
