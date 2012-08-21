@@ -30,4 +30,4 @@ The bootstrap module is passed a special Guice Binder that has an additional met
 
 h3. Completion
 
-At the end of Bootstrapping, Governator creates the bootstrap injector and gets the LifecycleManager instance which manages the main injection phase. Any bound asset loaders or configuration providers are injected into the LifecycleManager.
+At the end of Bootstrapping, Governator creates the bootstrap injector and gets the LifecycleManager instance which manages the main injection phase. Any bound configuration providers are injected into the LifecycleManager.
