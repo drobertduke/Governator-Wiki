@@ -5,7 +5,6 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 ** The classes are stored for later phases
 # Bootstrapping phase
 ** Application bootstrap modules are invoked
-** If an auto bind AssetLoader is found, it is bound as the default asset loader
 ** Auto bind ConfigurationProviders are bound
 ** The LifecycleManager is created via the bootstrap Injector
 # Main Injector phase
@@ -13,7 +12,6 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 ** AutoBindSingletons are bound
 ** The main Injector is created
 ** As each object is created by Guice:
-### RequiredAssets are loaded
 ### Configuration values are set
 ### PostConstruct methods are called
 # Start phase
