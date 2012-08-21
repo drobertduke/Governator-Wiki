@@ -8,5 +8,4 @@
 * [[Autobinding]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
-* [[Asset Loading]]
 * [[Spring]]

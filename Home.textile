@@ -7,7 +7,6 @@ Governator is a library of extensions and utilities that extend "Google Guice":h
 * Classpath scanning and automatic binding
 * Lifecycle management
 * Configuration to field mapping
-* Asset/property loading
 * Field validation
 * Parallelized object warmup/cooldown
 
@@ -24,10 +23,6 @@ Governator adds support for the standard annotations: <code>PostConstruct</code>
 h3. Configuration to field mapping
 
 Governator introduces a new annotation <code>Configuration</code> that can be used to annotate class fields. Governator will assign the fields using configuration from property files, etc.
-
-h3. Asset/property loading
-
-Governator introduces a new annotation <code>RequiredAsset</code> that can be used to annotate classes. Governator will load the asset (e.g. a property file, certificate, etc.) when instances of the class are injected by Guice.
 
 h3. Field validation
 
