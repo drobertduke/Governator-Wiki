@@ -18,6 +18,50 @@ You can specify your own bootstrap bindings if needed by specifying a bootstrap 
 LifecycleInjector.builder().withBootstrapModule(yourBootstrapModule)
 ```
 
+The bootstrap module is passed a special Guice Binder that has additional methods for binding AssetLoaders, AssetLoader parameters and ConfigurationProviders. Always use these special methods:
+
+```java
+    /**
+     * Begin binding a required asset name/value to a loader
+     *
+     * @param assetName asset name/value
+     * @return binder
+     */
+    public LinkedBindingBuilder<AssetLoader> bindAssetLoader(String assetName);
+
+    /**
+     * Begin binding the default asset loader
+     *
+     * @return binder
+     */
+    public LinkedBindingBuilder<AssetLoader> bindDefaultAssetLoader();
+
+    /**
+     * Begin binding a required asset name/type to an asset parameter
+     *
+     * @param assetName the name/value of the asset
+     * @param type the value type
+     * @return binder
+     */
+    public<T> LinkedBindingBuilder<T> bindAssetParameter(String assetName, TypeLiteral<T> type);
+
+    /**
+     * Begin binding a required asset name/type to an asset parameter
+     *
+     * @param assetName the name/value of the asset
+     * @param type the value type
+     * @return binder
+     */
+    public<T> LinkedBindingBuilder<T> bindAssetParameter(String assetName, Class<T> type);
+
+    /**
+     * Use this to bind {@link ConfigurationProvider}s. Do NOT use standard Guice binding.
+     *
+     * @return configuration binding builder
+     */
+    public LinkedBindingBuilder<ConfigurationProvider> bindConfigurationProvider();
+```
+
 h3. Completion
 
 At the end of Bootstrapping, Governator creates the bootstrap injector and gets the LifecycleManager instance which manages the main injection phase. Any bound asset loaders or configuration providers are injected into the LifecycleManager.
