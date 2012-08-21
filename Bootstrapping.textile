@@ -8,8 +8,7 @@ h3. Bootstrapping Steps
 
 Bootstrapping is part of the classpath scanning step:
 
-* Classes annotated with @RequiredAsset are examined to determine the specified AssetLoader class. A singleton binding is added to the bootstrap Injector for this AssetLoader.
-* ConfigurationProvider and AssetLoader classes annotated with @AutoBindSingleton are detected and bound into the bootstrap Injector.
+* ConfigurationProvider classes annotated with @AutoBindSingleton are detected and bound into the bootstrap Injector.
 * Application specific bootstrap binding is done via the specified bootstrap module (if any).
 
 You can specify your own bootstrap bindings if needed by specifying a bootstrap module:
@@ -18,42 +17,9 @@ You can specify your own bootstrap bindings if needed by specifying a bootstrap 
 LifecycleInjector.builder().withBootstrapModule(yourBootstrapModule)
 ```
 
-The bootstrap module is passed a special Guice Binder that has additional methods for binding AssetLoaders, AssetLoader parameters and ConfigurationProviders. Always use these special methods:
+The bootstrap module is passed a special Guice Binder that has an additional method for binding  ConfigurationProviders. Always use this special method:
 
 ```java
-    /**
-     * Begin binding a required asset name/value to a loader
-     *
-     * @param assetName asset name/value
-     * @return binder
-     */
-    public LinkedBindingBuilder<AssetLoader> bindAssetLoader(String assetName);
-
-    /**
-     * Begin binding the default asset loader
-     *
-     * @return binder
-     */
-    public LinkedBindingBuilder<AssetLoader> bindDefaultAssetLoader();
-
-    /**
-     * Begin binding a required asset name/type to an asset parameter
-     *
-     * @param assetName the name/value of the asset
-     * @param type the value type
-     * @return binder
-     */
-    public<T> LinkedBindingBuilder<T> bindAssetParameter(String assetName, TypeLiteral<T> type);
-
-    /**
-     * Begin binding a required asset name/type to an asset parameter
-     *
-     * @param assetName the name/value of the asset
-     * @param type the value type
-     * @return binder
-     */
-    public<T> LinkedBindingBuilder<T> bindAssetParameter(String assetName, Class<T> type);
-
     /**
      * Use this to bind {@link ConfigurationProvider}s. Do NOT use standard Guice binding.
      *
