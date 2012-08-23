@@ -19,3 +19,12 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 ** The application calls LifecycleManager.start()
 ** Bean/field validation is done
 ** Any WarmUp methods are executed in background threads
+
+---
+
+When application calls LifecycleManager.close() ...
+
+Each object that is being actively managed is shutdown in these steps:
+
+# CoolDown methods are executed in background threads
+# PreDestroy methods are called
