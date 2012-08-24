@@ -1,1 +1,16 @@
 There is much more to an object's lifecyle than just allocation via <code>new</code>. In particular, there is an important anti-pattern regarding letting <code>this</code> "escape" from a constructor. This page "describes the problem":http://www.javapractices.com/topic/TopicAction.do?Id=252 in detail.
+
+In Governator, an object can go through a number of steps in its lifecycle. Annotations are available to define methods for these steps. The steps are:
+
+<pre>
+Allocation (via Guice)
+     |
+     v
+PreConfiguration
+     |
+     v
+Configuration
+     |
+     V
+PostConstruct
+</pre>
