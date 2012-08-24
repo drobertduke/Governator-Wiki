@@ -45,6 +45,5 @@ Governator has many more features than the above. See the feature specific wikis
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[Warm Up and Cool Down]]
-* [[Autobinding]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
