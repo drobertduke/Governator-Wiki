@@ -1,4 +1,4 @@
-As part of initializing an object, Governator can assign configuration values to object fields. To use this feature, you must bind an instance that implements ConfigurationProvider (Governator provides a few default implementations to use) and annotate fields with @Configuration.
+As part of initializing an object, Governator can assign configuration values to object fields. To use this feature, you must bind an instance that implements ConfigurationProvider in the bootstrap phase. Governator provides a few default implementations to use. Then, annotate fields with @Configuration.
 
 h2. ConfigurationProvider
 
