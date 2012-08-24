@@ -4,7 +4,7 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 ** Specified packages are scanned for Governator annotations
 ** The classes are stored for later phases
 # Bootstrapping phase
-** Application bootstrap modules are invoked
+** The Application bootstrap module (if specified) is invoked
 ** Auto bind ConfigurationProviders are bound
 ** The LifecycleManager is created via the bootstrap Injector
 # Main Injector phase
