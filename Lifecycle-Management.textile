@@ -6,11 +6,24 @@ In Governator, an object can go through a number of steps in its lifecycle. Anno
 Allocation (via Guice)
      |
      v
-PreConfiguration
+Pre-Configuration
      |
      v
 Configuration
      |
      V
-PostConstruct
+Post Construction
+     |
+     V
+Warm Up
 </pre>
+
+At the end of the application, the object goes through these steps:
+
+<pre>
+Cool Down
+     |
+     v
+Pre Destroy
+</pre>
+
