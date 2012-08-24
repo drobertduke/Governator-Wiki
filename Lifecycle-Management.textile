@@ -27,3 +27,7 @@ Cool Down
 Pre Destroy
 </pre>
 
+Here are the annotations available:
+
+|_.Annotation|_.Target|_.Description|
+|@PreConfiguration|Methods|Called prior to [[Configuration Mapping]]|
