@@ -1,1 +1,1 @@
-TBD
+There is much more to an object's lifecyle than just allocation via <code>new</code>.
