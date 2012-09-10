@@ -40,6 +40,8 @@ The variableValues maps a variable name to its value. Some examples:
 |${stage}.server|"stage" -> "test"|test.server|
 |password.${user}.${month}|"user" -> "jz", "month" -> "oct"|password.jz.oct|
 
+ConfigurationKey also has a method to get the list of variable names present in the @Configuration value.
+
 h3. @PreConfiguration
 
 You can annote methods to get called prior to configuration mapping. E.g.:
