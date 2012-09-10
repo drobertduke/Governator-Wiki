@@ -47,7 +47,7 @@ Fields annotated with @Configuration will get assigned configuration values base
 private int   numberOfThings = 10;
 ```
 
-For the above, Governator will call ConfigurationProvider.has("configs.qty.things") (note the value is actually a ConfigurationKey - see below). If it returns false, "numberOfThings" will stay set to 10 - i.e. 10 is the default value. If it returns true, "numberOfThings" is assigned the value returned by ConfigurationProvider.getInteger("configs.qty.things"). If "numberOfThings" was a String, ConfigurationProvider.getString("configs.qty.things") would be called, etc.
+For the above, Governator will call ConfigurationProvider.has("configs.qty.things") (note the argument is actually a ConfigurationKey - see below). If it returns false, "numberOfThings" will stay set to 10 - i.e. 10 is the default value. If it returns true, "numberOfThings" is assigned the value returned by ConfigurationProvider.getInteger("configs.qty.things"). If "numberOfThings" was a String, ConfigurationProvider.getString("configs.qty.things") would be called, etc.
 
 h3. ConfigurationKey
 
