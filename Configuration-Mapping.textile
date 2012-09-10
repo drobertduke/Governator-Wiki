@@ -26,22 +26,6 @@ LifecycleInjector.builder()
     )
 ```
 
-h3. ConfigurationKey
-
-Each method of the ConfigurationProvider takes a <code>ConfigurationKey</code> as an argument as opposed to a simple string. The ConfigurationKey enables a convention for providing variables within the @Configuration value. Governator will parse the value into tokens. Tokens can be either a literal value or a variable substitution. Variables are specified as <code>${variable-name}</code>. The ConfigurationKey has a method to apply variables and return the applied key:
-
-```java
-public String getKey(Map<String, String> variableValues);
-```
-
-The variableValues maps a variable name to its value. Some examples:
-
-|_.Value|_.variableValues|_.Actual Key|
-|${stage}.server|"stage" -> "test"|test.server|
-|password.${user}.${month}|"user" -> "jz", "month" -> "oct"|password.jz.oct|
-
-ConfigurationKey also has a method to get the list of variable names present in the @Configuration value.
-
 h3. @PreConfiguration
 
 You can annote methods to get called prior to configuration mapping. E.g.:
@@ -63,7 +47,23 @@ Fields annotated with @Configuration will get assigned configuration values base
 private int   numberOfThings = 10;
 ```
 
-For the above, Governator will call ConfigurationProvider.has("configs.qty.things"). If it returns false, "numberOfThings" will stay set to 10 - i.e. 10 is the default value. If it returns true, "numberOfThings" is assigned the value returned by ConfigurationProvider.getInteger("configs.qty.things"). If "numberOfThings" was a String, ConfigurationProvider.getString("configs.qty.things") would be called, etc.
+For the above, Governator will call ConfigurationProvider.has("configs.qty.things") (note the value is actually a ConfigurationKey - see below). If it returns false, "numberOfThings" will stay set to 10 - i.e. 10 is the default value. If it returns true, "numberOfThings" is assigned the value returned by ConfigurationProvider.getInteger("configs.qty.things"). If "numberOfThings" was a String, ConfigurationProvider.getString("configs.qty.things") would be called, etc.
+
+h3. ConfigurationKey
+
+Each method of the ConfigurationProvider takes a <code>ConfigurationKey</code> as an argument as opposed to a simple string. The ConfigurationKey enables a convention for providing variables within the @Configuration value. Governator will parse the value into tokens. Tokens can be either a literal value or a variable substitution. Variables are specified as <code>${variable-name}</code>. The ConfigurationKey has a method to apply variables and return the applied key:
+
+```java
+public String getKey(Map<String, String> variableValues);
+```
+
+The variableValues maps a variable name to its value. Some examples:
+
+|_.Value|_.variableValues|_.Actual Key|
+|${stage}.server|"stage" -> "test"|test.server|
+|password.${user}.${month}|"user" -> "jz", "month" -> "oct"|password.jz.oct|
+
+ConfigurationKey also has a method to get the list of variable names present in the @Configuration value.
 
 h2. Configuration Documentation
 
