@@ -26,6 +26,20 @@ LifecycleInjector.builder()
     )
 ```
 
+h3. ConfigurationKey
+
+Each method of the ConfigurationProvider takes a <code>ConfigurationKey</code> as an argument as opposed to a simple string. The ConfigurationKey enables a convention for provided variables within the @Configuration value. Governator will parse the value into tokens. Tokens can be either a literal value or a variable substitution. Variables are specified as <code>${variable-name}</code>. The ConfigurationKey has a method to apply variables and return the applied key:
+
+```java
+public String getKey(Map<String, String> variableValues);
+```
+
+The variableValues maps a variable name to its value. Some examples:
+
+|_.Value|_.variableValues|_.Actual Key|
+|${stage}.server|"stage" -> "test"|test.server|
+|password.${user}.${month}|"user" -> "jz", "month" -> "oct"|password.jz.oct|
+
 h3. @PreConfiguration
 
 You can annote methods to get called prior to configuration mapping. E.g.:
