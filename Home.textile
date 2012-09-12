@@ -31,6 +31,10 @@ Governator supports the <code>javax.validation</code> annotations (JSR 303). Fie
 h3. Parallelized object warmup/cooldown
 
 Governator introduces two new annotations <code>WarmUp</code> and <code>CoolDown</code>. Methods annotated with <code>WarmUp</code> will get executed (in parallel) after injected by Guice. Methods annotated with <code>CoolDown</code> will get executed (in parallel) when the Governator Lifecycle is shut down.
+
+h3. Lazy Singletons
+
+Governator adds a LazySingleton annotation and scope. This is the opposite of Guice's Eager Singletons. Lazy singletons are not created until just before they are to be injected regardless of Guice's Stage.
  
 h2. Requirements/Prerequisites
 
