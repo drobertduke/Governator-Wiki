@@ -34,7 +34,7 @@ Governator introduces two new annotations <code>WarmUp</code> and <code>CoolDown
 
 h3. Lazy Singletons
 
-Governator adds a LazySingleton annotation and scope. This is the opposite of Guice's Eager Singletons. Lazy singletons are not created until just before they are to be injected regardless of Guice's Stage. You can use lazy singleton either by annotating a class with <code>@LazySingleton</code> or using the LazySingletonScope when binding: <code>LazySingletonScope.get()</code>.
+Governator adds a LazySingleton annotation and scope. This is the opposite of Guice's Eager Singletons. Lazy singletons are not created until just before they are to be injected regardless of Guice's Stage.
  
 h2. Requirements/Prerequisites
 

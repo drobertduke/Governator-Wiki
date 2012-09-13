@@ -7,4 +7,5 @@
 * [[Warm Up and Cool Down]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
+* [[Lazy Singleton]]
 * [[Spring]]
