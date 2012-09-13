@@ -1,0 +1,1 @@
+ You can use lazy singleton either by annotating a class with <code>@LazySingleton</code> or using the LazySingletonScope when binding: <code>LazySingletonScope.get()</code>.
