@@ -30,6 +30,8 @@ public class Foo
   {
      this.myClassProvider = myClassProvider;
   }
+  
+  ...
 
   // somewhere else in the class
   myClassProvider.get();   // object will be created here
