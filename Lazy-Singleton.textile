@@ -1,1 +1,37 @@
- You can use lazy singleton either by annotating a class with <code>@LazySingleton</code> or using the LazySingletonScope when binding: <code>LazySingletonScope.get()</code>.
+Guice can inject instances as a singletons. Depending on the mode that Guice is in, it will lazily create the singletons (i.e. only when they are needed) or eagerly create them (i.e. when the Injector is created). 
+
+By default, Governator sets the Guice mode to <code>Stage.PRODUCTION</code> which causes singletons to be eager. Guice does not provide a lazy singleton scope. This is added by Governator. 
+
+h3. LazySingleton
+
+You can use lazy singleton either by annotating a class with <code>@LazySingleton</code> or using the LazySingletonScope when binding. E.g.
+
+```
+binder.bind(IFace.class).to(Impl.class).in(LazySingletonScope.get())
+```
+
+h3. Example Usage
+
+LazySingleton comes in handy when you need to have fine grained control over when an instance is created. You can do this by using a provider in conjunction with LazySingleton. E.g.
+
+```
+// an example class
+@LazySingleton
+public class MyClass
+  ...
+
+// inject a provider instead of the instance
+public class Foo
+{
+  private final Provider<MyClass> myClassProvider;
+
+  @Inject
+  public foo(Provider<MyClass> myClassProvider)
+  {
+     this.myClassProvider = myClassProvider;
+  }
+
+  // somewhere else in the class
+  myClassProvider.get();   // object will be created here
+}
+```
