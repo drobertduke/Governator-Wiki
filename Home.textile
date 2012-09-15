@@ -1,4 +1,4 @@
-_Yah - PostConstruct me now unt PreDestroy me later_
+_Yahhh – PostConstruct me now unt PreDestroy me lay-tuh_
 
 h2. What is Governator?
 
