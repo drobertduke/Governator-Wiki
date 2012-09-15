@@ -1,4 +1,4 @@
-Governator provides a mechanism to listen for injections and lifecycle state changes via the <code>LifecycleListener</code> interface. Add a binding for your listener in the [[Bootstrapping]] module.
+Governator provides a mechanism to listen for injections and lifecycle state changes via the <code>LifecycleListener</code> interface. Add a binding to your listener in the [[Bootstrapping]] module.
 
 ```java
 /**
