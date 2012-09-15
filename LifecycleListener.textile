@@ -1,1 +1,26 @@
-TBD
+Governator provides a mechanism to listen for injections and lifecycle state changes via the <code>LifecycleListener</code> interface. Add a binding for your listener in the [[Bootstrapping]] module.
+
+```java
+/**
+ * Callback for injected instances
+ */
+public interface LifecycleListener
+{
+    /**
+     * When the IoC container being used injects an object, this callback will
+     * be notified
+     *
+     * @param obj object being injected
+     */
+    public void     objectInjected(Object obj);
+
+    /**
+     * Called when an objects lifecycle state changes
+     *
+     * @param obj the object
+     * @param newState new state
+     */
+    public void     stateChanged(Object obj, LifecycleState newState);
+}
+```
+
