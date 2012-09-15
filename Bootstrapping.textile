@@ -28,6 +28,10 @@ The bootstrap module is passed a special Guice Binder that has an additional met
     public LinkedBindingBuilder<ConfigurationProvider> bindConfigurationProvider();
 ```
 
+h3. LifecycleListener
+
+You can bind a LifecycleListener in the bootstrap module. See the [[LifecycleListener]] wiki for details.
+
 h3. Completion
 
 At the end of Bootstrapping, Governator creates the bootstrap injector and gets the LifecycleManager instance which manages the main injection phase. Any bound configuration providers are injected into the LifecycleManager.
