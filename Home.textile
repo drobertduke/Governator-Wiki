@@ -36,6 +36,10 @@ h3. Lazy Singletons
 
 Governator adds a LazySingleton annotation and scope. This is the opposite of Guice's Eager Singletons. Lazy singletons are not created until just before they are to be injected regardless of Guice's Stage.
  
+h3. Generic Binding Annotations
+
+The <code>com.netflix.governator.annotations.binding</code> contains several generic binding annotations that you might find useful. These might be more clear and more maintainable to users than using Guice's <code>@Named</code>.
+
 h2. Requirements/Prerequisites
 
 It's assumed that you are familiar with Google Guice.
