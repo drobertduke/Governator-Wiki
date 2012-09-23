@@ -38,7 +38,7 @@ Governator adds a LazySingleton annotation and scope. This is the opposite of Gu
  
 h3. Generic Binding Annotations
 
-The <code>com.netflix.governator.annotations.binding</code> contains several generic binding annotations that you might find useful. These might be more clear and more maintainable to users than using Guice's <code>@Named</code>.
+The <code>com.netflix.governator.annotations.binding</code> package contains a set of generic binding annotations that you might find useful. These might be more clear and more maintainable to users than using Guice's <code>@Named</code>.
 
 h2. Requirements/Prerequisites
 
