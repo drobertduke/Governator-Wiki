@@ -1,6 +1,11 @@
 Governator provides a mechanism to listen for injections and lifecycle state changes via the <code>LifecycleListener</code> interface. Add a binding to your listener in the [[Bootstrapping]] module.
 
+You can bind multiple <code>LifecycleListener</code> instances. The <code>BootstrapBinder</code> has a method for binding <code>LifecycleListener</code> instances.
+
 ```java
+// to bind a LifecycleListener in the BootstrapBinder
+binder.bindLifecycleListener().to(MyListener.class);
+
 /**
  * Callback for injected instances
  */
@@ -22,4 +27,3 @@ public interface LifecycleListener
     public void     stateChanged(Object obj, LifecycleState newState);
 }
 ```
-
