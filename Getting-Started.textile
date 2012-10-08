@@ -38,9 +38,13 @@ LifecycleInjector.builder().usingBasePackages(yourPackages)
 
 All classes in the specified packages (searched recursively) annotated with @AutoBindSingleton are bound as Guice eager singletons. This enables new behavior for Guice applications: classes that bind and instantiate without having to be injected/referenced by any other class.
 
+See [[Auto Binding]] for more details.
+
 h2. AutoBind Arguments
 
 TBD
+
+See [[Auto Binding]] for more details.
 
 h2. Next Steps
 

@@ -4,6 +4,7 @@
 * [[Governator Phases]]
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
+* [[Auto Binding]]
 * [[Warm Up and Cool Down]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
