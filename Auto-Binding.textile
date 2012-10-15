@@ -9,4 +9,18 @@ Governator will only scan configured packages from the CLASSPATH. Set the packag
 
 h2. AutoBindSingleton
 
-Classes annotated with @AutoBindSingleton@ will get auto-bound as Eager Singletons. This 
+Classes annotated with @AutoBindSingleton@ will get auto-bound as Eager Singletons. This is useful for stand-alone classes such as cleanup tasks, etc. that aren't referred to in the code. E.g.
+
+```java
+@AutoBindSingleton
+public class MyClass {
+   ...
+}
+```
+
+Governator will bind this class as:
+
+
+```java
+binder.bind(MyClass.class).asEagerSingleton();
+```
