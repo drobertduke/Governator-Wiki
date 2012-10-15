@@ -3,4 +3,10 @@ Governator can scan your CLASSPATH to do "auto binding". There are two types of 
 * AutoBindSingleton
 * AutoBind (for injected arguments/fields)
 
-TBD
+h2. Configuration
+
+Governator will only scan configured packages from the CLASSPATH. Set the packages to use with the @usingBasePackages()@ method of the @LifecycleInjectorBuilder@.
+
+h2. AutoBindSingleton
+
+Classes annotated with @AutoBindSingleton@ will get auto-bound as Eager Singletons. This 
