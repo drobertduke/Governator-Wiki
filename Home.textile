@@ -14,7 +14,7 @@ h2. Features
 
 h3. Classpath scanning and automatic binding
 
-Governator introduces a the annotations <code>@AutoBindSingleton</code> and <code>@AutoBind</code>. See the [[Auto Binding]] wiki for details.
+Governator introduces the annotations <code>@AutoBindSingleton</code> and <code>@AutoBind</code>. See the [[Auto Binding]] wiki for details.
 
 h3. Lifecycle management
 
