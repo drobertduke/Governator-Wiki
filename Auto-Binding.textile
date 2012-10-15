@@ -56,3 +56,13 @@ public class MyAutoBindProvider implements AutoBindProvider<AutoBind> {
 }
 ```
 
+You must bind your AutoBindProvider in Governator's [[Bootstrapping]] phase:
+
+```java
+LifecycleInjectorBuilder    builder = ...
+builder.withBootstrapModule(new BootstrapModule(){
+    public void configure(BootstrapBinder binder) {
+        binder.bind(new TypeLiteral<AutoBindProvider<AutoBind>>(){}).toInstance(MyAutoBindProvider);
+    }
+});
+```
