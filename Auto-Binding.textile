@@ -1,1 +1,6 @@
+Governator can scan your CLASSPATH to do "auto binding". There are two types of auto binding supported:
+
+* AutoBindSingleton
+* AutoBind (for injected arguments/fields)
+
 TBD
