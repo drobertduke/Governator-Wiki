@@ -24,3 +24,7 @@ Governator will bind this class as:
 ```java
 binder.bind(MyClass.class).asEagerSingleton();
 ```
+
+h2. Fields and Arguments
+
+TBD
