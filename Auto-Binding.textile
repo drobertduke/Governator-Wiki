@@ -1,4 +1,4 @@
-Governator can scan your CLASSPATH to do "auto binding". There are two types of auto binding supported:
+Using Guice's modules to add bindings can be cumbersome and tedious. It's also unnecessary for most simple types of binding. Governator can scan your CLASSPATH to do "auto binding". There are two types of auto binding supported:
 
 * AutoBindSingleton
 * AutoBind (for injected arguments/fields)
