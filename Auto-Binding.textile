@@ -66,3 +66,26 @@ builder.withBootstrapModule(new BootstrapModule(){
     }
 });
 ```
+
+h3. Custom AutoBind Annotations
+
+AutoBind supports custom annotations as well. You can use custom AutoBind annotations to capture additional parameters and/or to differentiate different auto bind scenarios. A custom AutoBind annotation looks like this:
+
+```java
+@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
+@Target({ElementType.FIELD, ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.PARAMETER})
+@BindingAnnotation
+@AutoBind
+public @interface CustomAutoBind
+{
+    String      name();
+
+    long        id();
+}
+```
+
+Notice that your custom Auto Bind annotation must itself be annotated with @AutoBind and @BindingAnnotation. You then must bind an AutoBindProvider for the custom annotation in the bootstrap binder:
+
+```java
+binder.bind(new TypeLiteral<AutoBindProvider<CustomAutoBind>>(){}).toInstance(MyCustomAutoBindProvider);
+```
