@@ -29,7 +29,7 @@ h2. Fields and Arguments
 
 Governator has a method for auto binding injected constructor/method arguments and injected fields via the @AutoBind@ annotation. As Governator is scanning the CLASSPATH, it looks for injection sites that are annotated with @AutoBind@ (or custom auto bind annotations - see below). The actual binding is done via an @AutoBindProvider@ that you create.
 
-Here's an example usage: imagine a class "PropertyName" that is used throughout your application. PropertyName is a POJO that holds a String - a property name. Everywhere PropertyName is used it might have a different value and there are possibly hundreds of these usages. Without Governator, you'd need to bind each of those usages. With @AutoBind, you can create the bindings much each easier.
+Here's an example usage: imagine a class "PropertyName" that is used throughout your application. PropertyName is a POJO that holds a String - a property name. Everywhere PropertyName is used it might have a different value and there are possibly hundreds of these usages. Without Governator, you'd need to bind each of those usages. With @AutoBind, you can create the bindings much easier.
 
 ```java
 public class MyClass {
