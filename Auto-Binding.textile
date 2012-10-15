@@ -44,3 +44,15 @@ public class AnotherClass {
 
 ...
 ```
+
+To do the actual binding, create an instance of AutoBindProvider. For the above example, it would be something like this:
+
+```java
+public class MyAutoBindProvider implements AutoBindProvider<AutoBind> {
+    public void     configure(Binder binder, AutoBind annotation) {
+        PropertyName p = new PropertyName(annotation.getValue());
+        binder.bind(PropertyName.class).annotatedWith(annotation).toInstance(p);
+    }
+}
+```
+
