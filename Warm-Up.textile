@@ -1,0 +1,5 @@
+In addition to the standard lifecycle annotations @PostConstruct and @PreDestroy, Governator adds: @WarmUp
+
+Methods annotated with @WarmUp will be called in a background executor when LifecycleManager.start() is called.
+
+The number of threads in the executor is a factor of the number of cores available to the JVM. 
