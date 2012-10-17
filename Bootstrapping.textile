@@ -1,6 +1,6 @@
 Governator creates two Guice injectors: an internal "bootstrapping" Injector and the main application Injector. The main Injector is created when you call <code>LifecycleInjectorBuilder.createInjector()</code>. The bootstrapping injector is created internally by Governator.
 
-h3. Why two Injectors?
+h3. Why Two Injectors?
 
 Governator features introduce recursive dependencies. [[configuration mapping]] and the LifecycleManager instance require <code>ConfigurationProvider</code> instances. These instances are needed as the main Injector is being created (i.e. as Guice is creating instances). 
 
