@@ -30,5 +30,4 @@ Here are the annotations available:
 |@PreConfiguration|Methods|Called prior to [[Configuration Mapping]]|
 |@PostConfiguration|Methods|Called after [[Configuration Mapping]]|
 |@WarmUp|Methods|Called when LifecycleManager.start() is called. Executed in parallel in the background.|
-|@CoolDown|Methods|Called when LifecycleManager.close() is called. Executed in parallel in the background.|
-|@PreDestroy|Methods|Called after cool downs (if any)|
+|@PreDestroy|Methods|Called when LifecycleManager.close() is called.|
