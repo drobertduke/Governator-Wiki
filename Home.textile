@@ -22,7 +22,7 @@ Governator adds support for the standard annotations: <code>@PostConstruct</code
 
 h3. Configuration to field mapping
 
-Governator introduces a new annotation <code>@Configuration</code> that can be used to annotate class fields. Governator will assign the fields using configuration from property files, etc. Another annotation is also introduced, <code>@PreConfiguration</code>, for methods to be called prior to configuration assignment.
+Governator introduces a new annotation <code>@Configuration</code> that can be used to annotate class fields. Governator will assign the fields using configuration from property files, etc. Another annotation is also introduced, <code>@PreConfiguration</code>, for methods to be called prior to configuration assignment. See the [[Configuration Mapping]] wiki for details.
 
 h3. Field validation
 
