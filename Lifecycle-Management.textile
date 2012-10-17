@@ -21,9 +21,6 @@ Warm Up
 At the end of the application, the object goes through these steps:
 
 <pre>
-Cool Down
-     |
-     v
 Pre Destroy
 </pre>
 
