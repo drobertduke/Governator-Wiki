@@ -26,25 +26,11 @@ When your application is shutting down, stop the LifecycleManager so that @PreDe
 manager.close();
 ```
 
-h2. AutoBindSingleton
+h2. Auto Binding
 
-While Guice has some support for automatic binding (Just in Time - JIT - binding), it's functionality is limited in that the instance has to be injected into some other object so that Guice is aware of it. Governator normalizes automatic binding via classpath scanning and the @AutoBindSingleton annotation.
+While Guice has some support for automatic binding (Just in Time - JIT - binding), it's functionality is limited in that the instance has to be injected into some other object so that Guice is aware of it. Governator normalizes automatic binding via classpath scanning and the @AutoBindSingleton and @AutoBind annotations.
 
-Classpath scanning is done in a manner similar to "Jersey":http://jersey.java.net/ scanning. You specify a set of base packages and the Classpath is scanned for matching classes. 
-
-```java
-LifecycleInjector.builder().usingBasePackages(yourPackages)
-```
-
-All classes in the specified packages (searched recursively) annotated with @AutoBindSingleton are bound as Guice eager singletons. This enables new behavior for Guice applications: classes that bind and instantiate without having to be injected/referenced by any other class.
-
-See [[Auto Binding]] for more details.
-
-h2. AutoBind Arguments
-
-TBD
-
-See [[Auto Binding]] for more details.
+See [[Auto Binding]] for details.
 
 h2. Next Steps
 
@@ -52,6 +38,7 @@ See these feature specific wikis to learn more detail about the above features o
 
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
-* [[Warm Up and Cool Down]]
+* [[Warm Up]]
+* [[Auto Binding]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
