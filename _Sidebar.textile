@@ -5,7 +5,7 @@
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[Auto Binding]]
-* [[Warm Up and Cool Down]]
+* [[Warm Up]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
 * [[LifecycleListener]]
