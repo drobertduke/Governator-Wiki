@@ -2,13 +2,14 @@ Governator creates two Guice injectors: an internal "bootstrapping" Injector and
 
 h3. Why Two Injectors?
 
-Governator features introduce recursive dependencies. [[Configuration Mapping]] and the LifecycleManager instance require <code>ConfigurationProvider</code> instances. These instances are needed as the main Injector is being created (i.e. as Guice is creating instances). 
+Governator features introduce recursive dependencies. [[Configuration Mapping]] requires <code>ConfigurationProvider</code> instances. [[Auto Binding]] arguments require <code>AutoBindProvider</code> instances. These instances are needed as the main Injector is being created (i.e. as Guice is creating instances). 
 
 h3. Bootstrapping Steps
 
 Bootstrapping is part of the classpath scanning step:
 
 * ConfigurationProvider classes annotated with @AutoBindSingleton are detected and bound into the bootstrap Injector.
+* AutoBindProvider classes must be bound in the bootstrapping step
 * Application specific bootstrap binding is done via the specified bootstrap module (if any).
 
 You can specify your own bootstrap bindings if needed by specifying a bootstrap module:
