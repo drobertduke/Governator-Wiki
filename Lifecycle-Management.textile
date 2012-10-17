@@ -18,7 +18,7 @@ Post Construction
 Warm Up
 </pre>
 
-At the end of the application, the object goes through these steps:
+At the end of the application, the object goes through this step:
 
 <pre>
 Pre Destroy
