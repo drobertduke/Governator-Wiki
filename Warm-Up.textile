@@ -4,7 +4,7 @@ Methods annotated with @WarmUp will be called in parallel (using the Java Fork-J
 
 !https://github.com/Netflix/governator/wiki/assets/abc.png(A B C)!
 
-* Object A is dependent on objects B and C and all have warm up methods
+* Object A is dependent on objects B and C and all have warm up methods.
 * Object A's warm up method will not be executed until both objects B and C's warm up methods complete. 
 * Objects B and C's warm up methods will execute in parallel.
 
