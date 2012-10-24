@@ -44,10 +44,6 @@ h2. Requirements/Prerequisites
 
 It's assumed that you are familiar with Google Guice.
 
-h2. Acknowledgements
-
-Governator is based on ideas developed for the "Proofpoint Platform":https://github.com/proofpoint/platform library.
-
 h2. Maven / Artifacts
 
 Governator binaries are published to Maven Central.
