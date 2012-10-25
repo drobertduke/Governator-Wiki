@@ -19,7 +19,7 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 # Start phase
 ** The application calls LifecycleManager.start()
 ** Bean/field validation is done
-** Any WarmUp methods are executed in background threads
+** Any WarmUp methods are executed via Fork/Join
 
 ---
 
