@@ -1,4 +1,4 @@
-Governator can be used in a Spring, PicoContainer (or similar) project in the following way:
+Governator can be used in a Spring, PicoContainer or similar project in the following way:
 
 h2. Spring 
 
