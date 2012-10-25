@@ -10,4 +10,4 @@
 * [[Field Validation]]
 * [[LifecycleListener]]
 * [[Lazy Singleton]]
-* [[Spring / PicoContainer]]
+* [[Spring, PicoContainer, Etc.]]
