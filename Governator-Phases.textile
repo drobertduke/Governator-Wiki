@@ -27,6 +27,6 @@ Objects that are injected after LifecycleManager.start() get passed through the 
 
 ---
 
-When application calls LifecycleManager.close() ...
+When the application calls LifecycleManager.close() ...
 
 Each object that is being actively managed is shutdown by calling its PreDestroy methods (if any).
