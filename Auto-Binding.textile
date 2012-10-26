@@ -18,7 +18,7 @@ public class MyClass {
 }
 ```
 
-Governator will automatically (if it is in a package specified via @usingBasePackages()@) bind this class as:
+If MyClass is in a package specified via usingBasePackages(), Governator will automatically bind it as:
 
 
 ```java
