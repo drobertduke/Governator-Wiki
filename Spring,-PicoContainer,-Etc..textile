@@ -23,7 +23,7 @@ h2. Spring
 
 * Bind a LifecycleListener:
 
-See [LifecycleListener] for details.
+See [[LifecycleListener]] for details.
 
 * You can then access Governator managed objects via:
 
@@ -54,7 +54,7 @@ h2. PicoContainer
 
 * Bind a LifecycleListener:
 
-See [LifecycleListener] for details.
+See [[LifecycleListener]] for details.
 
 * You can then access Governator managed objects via:
 
