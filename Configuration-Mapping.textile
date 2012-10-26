@@ -35,7 +35,7 @@ LifecycleInjector.builder()
 
 h3. @PreConfiguration
 
-You can annote methods to get called prior to configuration mapping. E.g.:
+You can annote methods you want called prior to configuration mapping. E.g.:
 
 ```java
 @PreConfiguration
