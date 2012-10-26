@@ -2,7 +2,14 @@ As part of initializing an object, Governator can assign configuration values to
 
 h2. ConfigurationProvider
 
-The ConfigurationProvider is used to provide configuration values from configuration names as specified by @Configuration annotations. Governator bundles two implementations that you can use: SystemConfigurationProvider and PropertiesConfigurationProvider. SystemConfigurationProvider returns System properties (via <code>System.getProperty()</code>). PropertiesConfigurationProvider returns values from a Properties object (via <code>Properties.getProperty()</code>). Additionally, CompositeConfigurationProvider can be used to chain ConfigurationProviders together.
+The ConfigurationProvider is used to provide configuration values from configuration names as specified by @Configuration annotations. Governator bundles three implementations that you can use: 
+
+|_.Class|_.Description|
+|SystemConfigurationProvider|Returns System properties via <code>System.getProperty()</code>|
+|PropertiesConfigurationProvider|Returns values from a Properties object|
+|ArchaiusConfigurationProvider|Returns values using Netflix's "Archaius":https://github.com/Netflix/archaius|
+
+Additionally, CompositeConfigurationProvider can be used to chain ConfigurationProviders together.
 
 There are two ways to identify the ConfigurationProvider to Governator:
 
