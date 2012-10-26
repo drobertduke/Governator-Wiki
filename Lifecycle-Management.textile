@@ -29,5 +29,6 @@ Here are the annotations available:
 |_.Annotation|_.Target|_.Description|
 |@PreConfiguration|Methods|Called prior to [[Configuration Mapping]]|
 |@PostConfiguration|Methods|Called after [[Configuration Mapping]]|
-|@WarmUp|Methods|Called when LifecycleManager.start() is called. Executed in parallel in the background.|
+|@Min, @Max, etc.|Fields|Processed when LifecycleManager.start() is called. See [[Field Validation]] for details.|
+|@WarmUp|Methods|Called when LifecycleManager.start() is called. Executed in parallel in the background. See [[Warm Up]] for details.|
 |@PreDestroy|Methods|Called when LifecycleManager.close() is called.|
