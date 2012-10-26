@@ -15,7 +15,7 @@ Configuration
 Post Construction
      |
      V
-Warm Up
+Validation and Warm Up
 </pre>
 
 At the end of the application, the object goes through this step:
