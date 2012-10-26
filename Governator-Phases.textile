@@ -23,6 +23,10 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 
 ---
 
+Objects that are injected after LifecycleManager.start() get passed through the Lifecycle: i.e. PreConfiguration, Configuration and PostConstruct methods are called. Additionally, bean/field validation and warming up are done immediately.
+
+---
+
 When application calls LifecycleManager.close() ...
 
 Each object that is being actively managed is shutdown by calling its PreDestroy methods (if any).
