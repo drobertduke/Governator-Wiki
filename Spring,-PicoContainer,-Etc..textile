@@ -2,7 +2,7 @@ Governator can be used in a Spring, PicoContainer or similar project in the foll
 
 h2. Spring 
 
-* Create a LifecycleListener that has access to your @ApplicationContext@
+h4. Create a LifecycleListener that has access to your @ApplicationContext@
 
 ```java
         LifecycleListener   lifecycleListener = new LifecycleListener()
@@ -21,11 +21,11 @@ h2. Spring
         };
 ```
 
-* Bind a LifecycleListener:
+h4. Bind a LifecycleListener:
 
 See [[LifecycleListener]] for details.
 
-* You can then access Governator managed objects via:
+h4. You can then access Governator managed objects via:
 
 ```java
     MyClass     m = context.getBeanFactory().getBean(MyClass.class);
@@ -33,7 +33,7 @@ See [[LifecycleListener]] for details.
 
 h2. PicoContainer
 
-* Create a LifecycleListener that has access to your @MutablePicoContainer@
+h4. Create a LifecycleListener that has access to your @MutablePicoContainer@
 
 ```java
         LifecycleListener   lifecycleListener = new LifecycleListener()
@@ -52,11 +52,11 @@ h2. PicoContainer
         };
 ```
 
-* Bind a LifecycleListener:
+h4. Bind a LifecycleListener:
 
 See [[LifecycleListener]] for details.
 
-* You can then access Governator managed objects via:
+h4. You can then access Governator managed objects via:
 
 ```java
     MyClass     m = container.getComponent(MyClass.class);
