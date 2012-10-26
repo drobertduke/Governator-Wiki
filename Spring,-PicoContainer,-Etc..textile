@@ -21,11 +21,9 @@ h2. Spring
         };
 ```
 
-* Include the listener when creating the LifecycleInjector:
+* Bind a LifecycleListener:
 
-```java
-    .withLifecycleListener(new FilteredLifecycleListener(lifecycleListener, yourPackages))
-```
+See [LifecycleListener] for details.
 
 * You can then access Governator managed objects via:
 
@@ -54,11 +52,9 @@ h2. PicoContainer
         };
 ```
 
-* Include the listener when creating the LifecycleInjector:
+* Bind a LifecycleListener:
 
-```java
-    .withLifecycleListener(new FilteredLifecycleListener(lifecycleListener, yourPackages))
-```
+See [LifecycleListener] for details.
 
 * You can then access Governator managed objects via:
 
