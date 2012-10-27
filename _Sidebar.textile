@@ -8,6 +8,7 @@
 * [[Field Validation]]
 * [[LifecycleListener]]
 * [[Lazy Singleton]]
+* "Generic Binding Annotations":https://github.com/Netflix/governator/tree/master/src/main/java/com/netflix/governator/annotations/binding
 * [[Governator Phases]]
 * [[FAQ]]
 * [[Spring, PicoContainer, Etc.]]
