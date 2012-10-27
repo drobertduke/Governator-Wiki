@@ -26,7 +26,7 @@ Governator introduces a new annotation <code>@Configuration</code> that can be u
 
 h3. Field validation
 
-Governator supports the <code>javax.validation</code> annotations (JSR 303). Fields annotated with validation annotations will get validated via the "Hibernate Validator":https://github.com/hibernate/hibernate-validator library.
+Governator supports the <code>javax.validation</code> annotations (JSR 303). Fields annotated with validation annotations will get validated via the Hibernate Validator. See the [[Field Validation]] wiki for details.
 
 h3. Parallelized object warmup
 
