@@ -10,9 +10,7 @@ Bootstrapping is part of the classpath scanning step:
 
 * ConfigurationProvider classes annotated with @AutoBindSingleton are detected and bound into the bootstrap Injector.
 * AutoBindProvider classes must be bound in the bootstrapping step
-* Application specific bootstrap binding is done via the specified bootstrap module (if any).
-
-You can specify your own bootstrap bindings if needed by specifying a bootstrap module:
+* Application specific bootstrap binding (if any) is done via the bootstrap module
 
 ```java
 LifecycleInjector.builder().withBootstrapModule(yourBootstrapModule)
