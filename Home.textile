@@ -42,7 +42,7 @@ The <code>com.netflix.governator.annotations.binding</code> package contains a s
 
 h2. Requirements/Prerequisites
 
-It's assumed that you are familiar with Google Guice.
+It's assumed that you are familiar with "Google Guice":https://code.google.com/p/google-guice/.
 
 h2. Maven / Artifacts
 
