@@ -10,6 +10,7 @@ Governator is a library of extensions and utilities that extend "Google Guice":h
 * Field validation
 * Parallelized object warmup
 * Lazy singleton support
+* Generic binding annotations
 
 h2. Features
 
