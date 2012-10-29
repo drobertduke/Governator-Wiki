@@ -33,7 +33,7 @@ You can bind a LifecycleListener in the bootstrap module. See the [[LifecycleLis
 
 h3. AutoBindProvider
 
-You must bing any AutoBindProvider instances in the bootstrap module. See the [[Auto Binding]] wiki for details.
+You must bind any AutoBindProvider instances in the bootstrap module. See the [[Auto Binding]] wiki for details.
 
 h3. Completion
 
