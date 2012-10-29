@@ -16,9 +16,9 @@ Post Construction
      |
      V
 Validation and Warm Up
-
-    -- application runs until termination, then... --
-    
+     |
+     V
+  -- application runs until termination, then... --    
      |
      V
 Pre Destroy
