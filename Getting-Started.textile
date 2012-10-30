@@ -42,3 +42,5 @@ See these feature specific wikis to learn more detail about the above features o
 * [[Auto Binding]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
+
+Additionally, there are "examples":https://github.com/Netflix/governator/tree/master/src/main/examples of Governator's features.
