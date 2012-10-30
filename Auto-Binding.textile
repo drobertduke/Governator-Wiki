@@ -62,7 +62,8 @@ You must bind your AutoBindProvider in Governator's [[Bootstrapping]] phase:
 LifecycleInjectorBuilder    builder = ...
 builder.withBootstrapModule(new BootstrapModule(){
     public void configure(BootstrapBinder binder) {
-        binder.bind(new TypeLiteral<AutoBindProvider<AutoBind>>(){}).toInstance(MyAutoBindProvider);
+        TypeLiteral<AutoBindProvider<AutoBind>> typeLiteral = new TypeLiteral<AutoBindProvider<AutoBind>>(){};
+        binder.bind(typeLiteral).toInstance(MyAutoBindProvider);
     }
 });
 ```
