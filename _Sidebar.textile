@@ -1,5 +1,6 @@
 * [[Home]]
 * [[Getting Started]]
+* "Examples":https://github.com/Netflix/governator/tree/master/src/main/examples
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[Auto Binding]]
