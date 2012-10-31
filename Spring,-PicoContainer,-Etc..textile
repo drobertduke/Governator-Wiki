@@ -1,0 +1,63 @@
+Governator can be used in a Spring, PicoContainer or similar project in the following way:
+
+h2. Spring 
+
+h4. Create a LifecycleListener that has access to your @ApplicationContext@
+
+```java
+        LifecycleListener   lifecycleListener = new LifecycleListener()
+        {
+            @Override
+            public void objectInjected(Object obj)
+            {
+                // context is an ApplicationContext
+                context.getBeanFactory().registerSingleton(obj.getClass().getName(), obj);
+            }
+
+            @Override
+            public void stateChanged(Object obj, LifecycleState newState)
+            {
+            }
+        };
+```
+
+h4. Bind a LifecycleListener:
+
+See [[LifecycleListener]] for details.
+
+h4. You can then access Governator managed objects via:
+
+```java
+    MyClass     m = context.getBeanFactory().getBean(MyClass.class);
+```
+
+h2. PicoContainer
+
+h4. Create a LifecycleListener that has access to your @MutablePicoContainer@
+
+```java
+        LifecycleListener   lifecycleListener = new LifecycleListener()
+        {
+            @Override
+            public void objectInjected(Object obj)
+            {
+                // container is a MutablePicoContainer
+                container.addComponent(obj);
+            }
+
+            @Override
+            public void stateChanged(Object obj, LifecycleState newState)
+            {
+            }
+        };
+```
+
+h4. Bind a LifecycleListener:
+
+See [[LifecycleListener]] for details.
+
+h4. You can then access Governator managed objects via:
+
+```java
+    MyClass     m = container.getComponent(MyClass.class);
+```

@@ -2,10 +2,6 @@ h3. Why is Governator needed?
 
 Unlike other IoC containers, Guice does not handle: classpath scanning, lifecycle annotations, configuration/properties, validation, etc.
 
-h3. Aren't there other libraries that do this?
+h3. Can I use this in Spring, PicoContainer, etc.?
 
-Yes. There are several Guice extensions that do some of these things. 
-
-h3. Can I use this in Spring?
-
-With a small amount of work, Governator can be used with Spring. Details here: [[Spring]].
+With a small amount of work, Governator can be used with most DI frameworks. Details here: [[Spring, PicoContainer, Etc.]].

@@ -1,8 +1,15 @@
-As part of initializing an object, Governator can assign configuration values to object fields. To use this feature, you must bind an instance that implements ConfigurationProvider in the bootstrap phase. Governator provides a few default implementations to use. Then, annotate fields with @Configuration.
+As part of initializing an object, Governator can assign configuration values to object fields. To use this feature, you must bind an instance that implements ConfigurationProvider in the bootstrap phase or annotation a ConfigurationProvider with @AutoBindSingleton. Governator provides a few default implementations to use. Then, annotate fields with @Configuration.
 
 h2. ConfigurationProvider
 
-The ConfigurationProvider is used to provide configuration values from configuration names as specified by @Configuration annotations. Governator bundles two implementations that you can use: SystemConfigurationProvider and PropertiesConfigurationProvider. SystemConfigurationProvider returns System properties (via <code>System.getProperty()</code>). PropertiesConfigurationProvider returns values from a Properties object (via <code>Properties.getProperty()</code>). Additionally, CompositeConfigurationProvider can be used to chain ConfigurationProviders together.
+The ConfigurationProvider is used to provide configuration values from configuration names as specified by @Configuration annotations. Governator bundles three implementations that you can use: 
+
+|_.Class|_.Description|
+|SystemConfigurationProvider|Returns System properties via <code>System.getProperty()</code>|
+|PropertiesConfigurationProvider|Returns values from a Properties object|
+|ArchaiusConfigurationProvider|Returns values using Netflix's "Archaius":https://github.com/Netflix/archaius|
+
+Additionally, CompositeConfigurationProvider can be used to chain ConfigurationProviders together.
 
 There are two ways to identify the ConfigurationProvider to Governator:
 
@@ -28,7 +35,7 @@ LifecycleInjector.builder()
 
 h3. @PreConfiguration
 
-You can annote methods to get called prior to configuration mapping. E.g.:
+You can annote methods you want called prior to configuration mapping. E.g.:
 
 ```java
 @PreConfiguration

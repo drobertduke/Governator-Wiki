@@ -10,3 +10,13 @@ private int   myInt;  // ValidationException is thrown if this is less than 5
 ```
 
 Validation is performed when <code>LifecycleManager.start()</code> is called.
+
+*NOTE:* You can combine validation, Auto Bind, Configuration, etc. annotations. E.g.
+
+```java
+@Max(10)
+@Configuration("my.config")
+@AutoBind
+@Inject
+private int    myConfig = DEFAULT_VALUE;
+```

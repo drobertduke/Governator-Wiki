@@ -1,5 +1,11 @@
 In addition to the standard lifecycle annotations @PostConstruct and @PreDestroy, Governator adds: @WarmUp
 
-Methods annotated with @WarmUp will be called in parallel (using the Java Fork-Join framework) when LifecycleManager.start() is called. Object dependencies are respected - i.e. if object A is dependent on objects B and C and all have warm up methods, object A's warm up method will not be executed until both objects B and C's warm up methods completes. Also, objects B and C's warm up methods will execute in parallel.
+Methods annotated with @WarmUp will be called in parallel (using the Java Fork-Join framework) when LifecycleManager.start() is called. Object dependencies are respected - i.e. given:
+
+!https://github.com/Netflix/governator/wiki/assets/abc.png(A B C)!
+
+* Object A is dependent on objects B and C and all have warm up methods.
+* Object A's warm up method will not be executed until both objects B and C's warm up methods complete. 
+* Objects B and C's warm up methods will execute in parallel.
 
 An alternate version of LifecycleManager.start() can be used to limit the amount of time allowed for warm up methods to complete. 

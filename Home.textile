@@ -9,6 +9,8 @@ Governator is a library of extensions and utilities that extend "Google Guice":h
 * Configuration to field mapping
 * Field validation
 * Parallelized object warmup
+* Lazy singleton support
+* Generic binding annotations
 
 h2. Features
 
@@ -26,11 +28,11 @@ Governator introduces a new annotation <code>@Configuration</code> that can be u
 
 h3. Field validation
 
-Governator supports the <code>javax.validation</code> annotations (JSR 303). Fields annotated with validation annotations will get validated via the "Hibernate Validator":https://github.com/hibernate/hibernate-validator library.
+Governator supports the <code>javax.validation</code> annotations (JSR 303). Fields annotated with validation annotations will get validated via the Hibernate Validator. See the [[Field Validation]] wiki for details.
 
 h3. Parallelized object warmup
 
-Governator introduces the new annotation <code>WarmUp</code>. Methods annotated with <code>WarmUp</code> will get executed (in parallel) after injected by Guice. See the [[Warm Up]] wiki for details.
+Governator introduces the new annotation <code>@WarmUp</code>. Methods annotated with <code>@WarmUp</code> will get executed (in parallel) after injected by Guice. See the [[Warm Up]] wiki for details.
 
 h3. Lazy Singletons
 
@@ -42,11 +44,7 @@ The <code>com.netflix.governator.annotations.binding</code> package contains a s
 
 h2. Requirements/Prerequisites
 
-It's assumed that you are familiar with Google Guice.
-
-h2. Acknowledgements
-
-Governator is based on ideas developed for the "Proofpoint Platform":https://github.com/proofpoint/platform library.
+It's assumed that you are familiar with "Google Guice":https://code.google.com/p/google-guice/.
 
 h2. Maven / Artifacts
 

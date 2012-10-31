@@ -19,10 +19,14 @@ Guice users are familiar with the "binding phase" where Guice calls your modules
 # Start phase
 ** The application calls LifecycleManager.start()
 ** Bean/field validation is done
-** Any WarmUp methods are executed in background threads
+** Any WarmUp methods are executed via Fork/Join
 
 ---
 
-When application calls LifecycleManager.close() ...
+Objects that are injected after LifecycleManager.start() get passed through the Lifecycle: i.e. PreConfiguration, Configuration and PostConstruct methods are called. Additionally, bean/field validation and warming up are done immediately.
+
+---
+
+When the application calls LifecycleManager.close() ...
 
 Each object that is being actively managed is shutdown by calling its PreDestroy methods (if any).
