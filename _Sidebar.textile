@@ -13,3 +13,4 @@
 * [[Governator Phases]]
 * [[FAQ]]
 * [[Spring, PicoContainer, Etc.]]
+* "Javadoc":http://netflix.github.com/governator/javadoc/index.html
