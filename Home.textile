@@ -32,7 +32,7 @@ Governator supports the <code>javax.validation</code> annotations (JSR 303). Fie
 
 h3. Parallelized object warmup
 
-Governator introduces the new annotation <code>WarmUp</code>. Methods annotated with <code>WarmUp</code> will get executed (in parallel) after injected by Guice. See the [[Warm Up]] wiki for details.
+Governator introduces the new annotation <code>@WarmUp</code>. Methods annotated with <code>@WarmUp</code> will get executed (in parallel) after injected by Guice. See the [[Warm Up]] wiki for details.
 
 h3. Lazy Singletons
 
