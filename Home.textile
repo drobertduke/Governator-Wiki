@@ -2,7 +2,7 @@ _Yahhh – PostConstruct me now unt PreDestroy me lay-tuh_
 
 h2. What is Governator?
 
-Governator is a library of extensions and utilities that extend "Google Guice":https://code.google.com/p/google-guice/ to provide:
+Governator is a library of extensions and utilities that enhance "Google Guice":https://code.google.com/p/google-guice/ to provide:
 
 * Classpath scanning and automatic binding
 * Lifecycle management
