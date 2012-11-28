@@ -4,6 +4,8 @@
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[Auto Binding]]
+** [[AutoBindSingleton]]
+** [[AutoBind]]
 * [[Warm Up]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
