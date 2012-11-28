@@ -28,3 +28,12 @@ If MyClass is in a package specified via usingBasePackages(), Governator will au
 ```java
 binder.bind(BaseClass.class).to(MyClass.class).asEagerSingleton();
 ```
+
+You can specify generic base classes/interfaces by listing the raw type of the class. E.g.
+
+```java
+@AutoBindSingleton(BaseClass.class)
+public class MyClass extends BaseClass<String> {
+   ...
+}
+```
