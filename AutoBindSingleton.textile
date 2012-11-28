@@ -9,7 +9,22 @@ public class MyClass {
 
 If MyClass is in a package specified via usingBasePackages(), Governator will automatically bind it as:
 
-
 ```java
 binder.bind(MyClass.class).asEagerSingleton();
+```
+
+By default, @AutoBindSingleton binds to the class that has the annotation. You can
+also set the value to any base class/interface that you want to bind to. For example:
+
+```java
+@AutoBindSingleton(BaseClass.class)
+public class MyClass implements BaseClass {
+   ...
+}
+```
+
+If MyClass is in a package specified via usingBasePackages(), Governator will automatically bind it as:
+
+```java
+binder.bind(BaseClass.class).to(MyClass.class).asEagerSingleton();
 ```
