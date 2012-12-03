@@ -1,0 +1,26 @@
+Governator integrates the Guice Grapher that enables visualizing your injection hierarchy. See "here for more details":http://code.google.com/p/google-guice/wiki/Grapher about Grapher.
+
+To create the graph, either allocate or inject an instance of Governator's @Grapher@ class and then call one of its generation methods. E.g.
+
+```java
+@AutoBindSingleton
+public class GraphFileCreator
+{
+    private final Grapher grapher;
+
+    @Inject
+    public GraphFileCreator(Grapher grapher)
+    {
+        this.grapher = grapher;
+    }
+
+    @PostConstruct
+    public void createGraphFile() throws Exception
+    {
+        grapher.toFile(new File("mygraph.dot"));
+    }
+}
+```
+
+This will create a file named "mygraph.dot" in the working directory that can be viewed with "XDot":http://code.google.com/p/jrfonseca/wiki/XDot.
+
