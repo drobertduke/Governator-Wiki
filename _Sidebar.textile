@@ -13,6 +13,7 @@
 * "Generic Binding Annotations":https://github.com/Netflix/governator/tree/master/src/main/java/com/netflix/governator/annotations/binding
 * [[LifecycleListener]]
 * [[Governator Phases]]
+* [[Grapher Integration]]
 * [[FAQ]]
 * [[Spring, PicoContainer, Etc.]]
 * "Javadoc":http://netflix.github.com/governator/javadoc/index.html
