@@ -37,3 +37,9 @@ public class MyClass extends BaseClass<String> {
    ...
 }
 ```
+
+AutoBindSingleton supports the following types of classes:
+
+* General purpose singletons
+* Guice Providers
+* Guice Modules
