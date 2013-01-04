@@ -9,7 +9,8 @@ Governator is a library of extensions and utilities that enhance "Google Guice":
 * Configuration to field mapping
 * Field validation
 * Parallelized object warmup
-* Lazy singleton support
+* Lazy singleton
+* Fine grained, more concurrent singleton
 * Generic binding annotations
 
 h2. Features
@@ -37,6 +38,10 @@ Governator introduces the new annotation <code>@WarmUp</code>. Methods annotated
 h3. Lazy Singletons
 
 Governator adds a LazySingleton annotation and scope. This is the opposite of Guice's Eager Singletons. Lazy singletons are not created until just before they are to be injected regardless of Guice's Stage. See the [[Lazy Singleton]] wiki for details.
+
+h3. Fine Grained, More Concurrent Singletons
+
+Guice's default Singleton scope synchronizes all object creation on a single lock (InternalInjectorCreator.class). It does this to avoid deadlocks with circular dependencies. FineGrainedLazySingleton instead locks on the key so that multiple singletons can be created concurrently.  See the [[Concurrent Singleton]] wiki for details.
  
 h3. Generic Binding Annotations
 
