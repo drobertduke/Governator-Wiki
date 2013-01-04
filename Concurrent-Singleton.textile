@@ -1,1 +1,7 @@
 Guice's default Singleton scope synchronizes all object creation on a single lock ("see here":http://code.google.com/p/google-guice/source/browse/core/src/com/google/inject/Scopes.java#63). It does this to avoid deadlocks with circular dependencies. FineGrainedLazySingleton instead locks on the key so that multiple singletons can be created concurrently. Circular dependencies are rare so FineGrainedLazySingleton risks deadlocks in those situations for the benefit of better concurrency.
+
+Goverator's annotation for this behavior is @FineGrainedLazySingleton@. A class annotated with @FineGrainedLazySingleton@ will be...
+
+* ...lazily created (like [[Lazy Singleton]])
+* ...created by the FineGrainedLazySingletonScope which synchronizes on the Guice Key instead of @InternalInjectorCreator.class@)
+* ...able to be created alongside other FineGrainedLazySingleton in different threads
