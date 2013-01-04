@@ -1,4 +1,4 @@
-Guice's default Singleton scope synchronizes all object creation on a single lock ("see here":http://code.google.com/p/google-guice/source/browse/core/src/com/google/inject/Scopes.java#56). It does this to avoid deadlocks with circular dependencies. Governator adds the @FineGrainedLazySingleton@ annotation that locks on the Guice key so that multiple singletons can be created concurrently. Circular dependencies are rare so FineGrainedLazySingleton risks deadlocks in those situations for the benefit of better concurrency.
+Guice's default Singleton scope synchronizes all object creation on a single lock ("see here":http://code.google.com/p/google-guice/source/browse/core/src/com/google/inject/Scopes.java#56). It does this to avoid deadlocks with circular dependencies. Governator adds the @FineGrainedLazySingleton@ annotation that locks on the Guice Key so that multiple singletons can be created concurrently. Circular dependencies are rare so FineGrainedLazySingleton risks deadlocks in those situations for the benefit of better concurrency.
 
 A class annotated with @FineGrainedLazySingleton@ will be...
 
