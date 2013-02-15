@@ -92,3 +92,25 @@ PROPERTY     FIELD               DEFAULT    VALUE           DESCRIPTION
 prop.name.1  com.foo.Bar#aBool   false      true            This is a boolean     
 other.prop   com.foo.Bar#xyz     something  another thing   This does something
 </pre>
+
+h2. Configuration type mismatch
+
+Governator uses ConfigurationProvider's various methods to obtain a value which matches with the target field data type. However, in cases where the property's value is wrongly configured, such that the value can not be converted to the target data type, Governator initialization will fail. This behavior is suitable for most of the cases where the configured field is critical for the functioning of the module. However, in cases where the configured field can work well with a default value, this behavior is disruptive. In such a case, in order to ignore the type mismatch, one can set the property "ignoreTypeMismatch" to true. This will ignore any type mismatch that occurs during configuration.
+
+. E.g.
+
+```java
+@Configuration
+(
+    value = "configs.qty.things", 
+    documentation = "This controls the number of things used.",
+    ignoreTypeMismatch = true
+)
+private int   numberOfThings = 10;
+```
+
+In the above case, if the value of the property "configs.qty.things" is set to "foo", the property value will be ignored. The field numberOfThings will remain set to 10 i.e. the default value above.
+
+Governator determines that a failure to retrieve a value was a type mismatch, if the ConfigurationProvider throws any of the following exceptions, upon property retrieval:
+# java.lang.IllegalArgumentException
+# org.apache.commons.configuration.ConversionException
