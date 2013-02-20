@@ -31,7 +31,7 @@ Here are the annotations available:
 
 |_.Annotation|_.Target|_.Description|
 |@PreConfiguration|Methods|Called prior to [[Configuration Mapping]]|
-|@Resource/@Resources|Classes,Methods,Fields|Called after Configuration Mapping. See [[http://docs.oracle.com/javaee/5/tutorial/doc/bncbe.html]] for details.|
+|@Resource/@Resources|Classes,Methods,Fields|Called after Configuration Mapping. See [[JDK Docs|http://docs.oracle.com/javaee/5/api/javax/annotation/Resource.html]] for details.|
 |@PostConstruct|Methods|Called after Resource setting|
 |@Min, @Max, etc.|Fields|Processed when LifecycleManager.start() is called. See [[Field Validation]] for details.|
 |@WarmUp|Methods|Called when LifecycleManager.start() is called. Executed in parallel in the background. See [[Warm Up]] for details.|
