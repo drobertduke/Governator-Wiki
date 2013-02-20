@@ -47,4 +47,4 @@ public interface ResourceLocator {
 }
 ```
 
-You can bind one or more ResourceLocators in your BootstrapModule using the @bindResourceLocator()@ method. There is a default ResourceLocator that calls @injector.getInstance(resource.type())@. When the locate() method of your ResourceLocator is called, the Resource object's name and type will have been updated if defaults were used. Your ResourceLocator can load the resource anyway it chooses. i.e. via JNDI, etc.
+You can bind one or more ResourceLocators in your BootstrapModule using the @bindResourceLocator()@ method. There is a default ResourceLocator that calls @injector.getInstance(resource.type())@. When the locate() method of your ResourceLocator is called, the Resource object's name and type will have been updated if defaults were used. Your ResourceLocator can load the resource anyway it chooses. i.e. via JNDI, etc. If your ResourceLocator cannot or does not wish to load the resource, call the @nextInChain@ ResourceLocator (which will eventually chain to Governator's default).
