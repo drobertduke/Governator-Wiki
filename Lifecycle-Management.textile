@@ -12,6 +12,9 @@ Pre Configuration
 Configuration
      |
      V
+Set Resources
+     |
+     V
 Post Construction
      |
      V
