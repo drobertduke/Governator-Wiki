@@ -21,7 +21,7 @@ Governator introduces the annotations <code>@AutoBindSingleton</code> and <code>
 
 h3. Lifecycle management
 
-Governator adds support for the standard annotations: <code>@PostConstruct</code> and <code>@PreDestroy</code>. See the [[Lifecycle Management]] wiki for details.
+Governator adds support for the standard annotations: <code>@PostConstruct</code>, <code>@PreDestroy</code> and <code>@Resource</code>. See the [[Lifecycle Management]] wiki for details.
 
 h3. Configuration to field mapping
 
