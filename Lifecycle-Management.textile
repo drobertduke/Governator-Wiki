@@ -31,8 +31,12 @@ Here are the annotations available:
 
 |_.Annotation|_.Target|_.Description|
 |@PreConfiguration|Methods|Called prior to [[Configuration Mapping]]|
-|&#064;Resource/&#064;Resources|Classes,Methods,Fields|Called after Configuration Mapping. See [[JDK Docs|http://docs.oracle.com/javaee/5/api/javax/annotation/Resource.html]] for details.|
+|&#064;Resource/&#064;Resources|Classes,Methods,Fields|Called after Configuration Mapping. See [[JDK Docs|http://docs.oracle.com/javaee/5/api/javax/annotation/Resource.html]] for details. Also, see the section on ResourceLoaders below.|
 |@PostConstruct|Methods|Called after Resource setting|
 |@Min, @Max, etc.|Fields|Processed when LifecycleManager.start() is called. See [[Field Validation]] for details.|
 |@WarmUp|Methods|Called when LifecycleManager.start() is called. Executed in parallel in the background. See [[Warm Up]] for details.|
 |@PreDestroy|Methods|Called when LifecycleManager.close() is called.|
+
+h3. Resources and ResourceLoaders
+
+TBD
