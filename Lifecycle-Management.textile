@@ -39,7 +39,7 @@ Here are the annotations available:
 
 h3. Resources and ResourceLocators
 
-The <code>@Resource</code> and <code>@Resources</code> annotations are processed by a Governator defined resource, @ResourceLocator@:
+The <code>@Resource</code> and <code>@Resources</code> annotations are processed by a Governator defined interface: @ResourceLocator@.
 
 ```java
 public interface ResourceLocator {
