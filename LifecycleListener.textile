@@ -14,9 +14,10 @@ public interface LifecycleListener
     /**
      * When Guice injects an object, this callback will be notified
      *
-     * @param obj object being injected
+     * @param type object type being injected
+     * @param obj  object being injected
      */
-    public void     objectInjected(Object obj);
+    public <T> void objectInjected(TypeLiteral<T> type, T obj);
 
     /**
      * Called when an object's lifecycle state changes
