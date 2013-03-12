@@ -56,6 +56,24 @@ private int   numberOfThings = 10;
 
 For the above, Governator will call ConfigurationProvider.has("configs.qty.things") (note the argument is actually a ConfigurationKey - see below). If it returns false, "numberOfThings" will stay set to 10 - i.e. 10 is the default value. If it returns true, "numberOfThings" is assigned the value returned by ConfigurationProvider.getInteger("configs.qty.things"). If "numberOfThings" was a String, ConfigurationProvider.getString("configs.qty.things") would be called, etc.
 
+h3. Dynamic Configuration
+
+Some configuration parameters may change at runtime and it would be desirable to have the new value picked up immediately.  To specify a dynamic configuration simply define the field as a Supplier<TYPE>.  Here's an example,
+
+```java
+@Configuration("configs.qty.things")
+private Supplier<Integer>   numberOfThings = Suppliers.ofInstance(10);
+```
+
+Governator will bind a supplier to the internal dynamic mechanism provided by the ConfigurationProvider.  Note that special consideration must be given to properties that have yet to be specified at the configuration binding phase but that can be specified later at runtime.  For example, the above property 'configs.qty.things' may not exist in the configuration when the object is configured but may be defined in the future.  To make the ConfigurationProvider aware of this property you must provide it with a property ownership policy.  The ownership policy tells Governator that certain properties belong to a provider regardless of whether they exist or not.  Several policies are provided and can be specified on the ArchaiusConfigurationProvider as follows,
+
+```java
+   ArchaiusConfigurationProvider.builder()
+       .withOwnershipPolicy(ConfigurationOwnershipPolicies.ownesAll())
+       .build()
+```
+
+
 h3. ConfigurationKey
 
 Each method of the ConfigurationProvider takes a <code>ConfigurationKey</code> as an argument as opposed to a simple string. The ConfigurationKey enables a convention for providing variables within the @Configuration value. Governator will parse the value into tokens. Tokens can be either a literal value or a variable substitution. Variables are specified as <code>${variable-name}</code>. The ConfigurationKey has a method to apply variables and return the applied key:
