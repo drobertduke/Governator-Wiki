@@ -1,3 +1,5 @@
+h3. Description
+
 Classes annotated with @AutoBindSingleton@ will get auto-bound as Eager Singletons. This is useful for stand-alone classes such as cleanup tasks, etc. that aren't referred to in the code. E.g.
 
 ```java
@@ -37,6 +39,28 @@ public class MyClass extends BaseClass<String> {
    ...
 }
 ```
+
+h3. Multibinding
+
+AutoBindSingleton can be used to do multibinding by setting @multiple=true@. You must also specify a base class. Example:
+
+```java
+public interface MyFace { ... }
+
+@AutoBindSingleton(multiple=true, baseClass=MyFace.class)
+public class ClassOne implements MyFace { ... }
+
+@AutoBindSingleton(multiple=true, baseClass=MyFace.class)
+public class ClassTwo implements MyFace { ... }
+
+@Singleton
+public class MyContainer {
+    @Inject
+    public MyContainer(Set<MyFace> objs) { ... }
+}
+```
+
+h3. Supported Types
 
 AutoBindSingleton supports the following types of classes:
 
