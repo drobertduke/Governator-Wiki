@@ -22,7 +22,7 @@ To do the actual binding, create an instance of AutoBindProvider. For the above 
 public class MyAutoBindProvider implements AutoBindProvider<AutoBind> {
     public void     configure(Binder binder, AutoBind annotation) {
         PropertyName p = new PropertyName(annotation.getValue());
-        binder.bind(PropertyName.class).annotatedWith(annotation).toInstance(p);
+        binder.bind(PropertyName.class).annotatedWith(AutoBinds.withValue(annotation.value())).toInstance(p);
     }
 }
 ```
