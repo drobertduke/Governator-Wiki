@@ -69,7 +69,7 @@ Governator will bind a supplier to the internal dynamic mechanism provided by th
 
 ```java
    ArchaiusConfigurationProvider.builder()
-       .withOwnershipPolicy(ConfigurationOwnershipPolicies.ownesAll())
+       .withOwnershipPolicy(ConfigurationOwnershipPolicies.ownsAll())
        .build()
 ```
 
