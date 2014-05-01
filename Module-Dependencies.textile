@@ -1,0 +1,54 @@
+In large applications it is sometimes necessary to break up bindings into multiple Guice modules that have dependencies on each other.  Furthermore, it is sometimes necessary to override the bindings for a specific module.  Governator simplifies adding these modules through the bootstrap phase.  Any application or library needs only to define a module that injects it directly Module dependencies via the standard @Inject annotation.  
+
+h4. Restrictions
+# All modules must be annotated with @Singleton
+# Modules should only inject other modules or bindings specified in a BootstrapModule
+
+h4. Usage
+
+An application is likely to define a single module which includes all of its direct dependent modules. This module can be added by calling builder.withAdditionalModuleClasses(ApplicationModule.class).  Note that more than one module can be added.
+
+```java
+// This application has a dependency on LibraryAModule and LibraryBModule. 
+// It will pull in LibraryCModule transitively.  
+@Singleton
+public class ApplicationModule extends AbstractModule {
+   @Inject
+   public ApplicationModule(LibraryAModule libA, LibraryBModule libB) {
+   }
+   ...
+}
+
+@Singleton
+public class LibraryAModule extends AbstractModule {
+   @Inject
+   public LibraryAModule(LibraryCModule libC) {
+   }
+}
+
+@Singleton
+public class LibraryBModule extends AbstractModule {
+   @Inject
+   public LibraryBModule(LibraryCModule libC) {
+   }
+}
+
+LifecycleInjector.builder()
+   .withAdditionalModuleClasses(ApplicationModule.class)
+   .build().createInjector();
+```
+
+h4. Overriding modules
+
+An entire module can be overridden by specifying a binding to the overriding module in a BootstrapModule.
+
+```java
+LifecycleInjector.builder()
+   .withAdditionalBoostrapModule(new BootstrapModule() {
+       public void configure(BootstrapBinder binder) {
+           bind(LibraryCModule.class).to(AlternativeLibraryCModule.class);
+       }
+   })
+   .withAdditionalModuleClasses(ApplicationModule.class);
+```
+
