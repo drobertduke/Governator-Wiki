@@ -6,6 +6,7 @@
 * [[Auto Binding]]
 ** [[AutoBindSingleton]]
 ** [[AutoBind]]
+* [[Module-Dependencies]]
 * [[Warm Up]]
 * [[Configuration Mapping]]
 * [[Field Validation]]
