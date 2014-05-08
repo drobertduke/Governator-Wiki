@@ -1,18 +1,14 @@
-In large applications it is sometimes necessary to break up bindings into multiple Guice modules that have dependencies on each other.  Furthermore, it is sometimes necessary to override the bindings for a specific module.  Governator simplifies adding these modules through the bootstrap phase.  Any application or library needs only to define a module that injects it directly Module dependencies via the standard @Inject annotation.  
-
-h4. Restrictions
-# All modules must be annotated with @Singleton
-# Modules should only inject other modules or bindings specified in a BootstrapModule
+Governator simplifies writing applications with composable libraries.  This is an alternative to AutoBindSingleton where a library defines complex bindings and its eager singletons in a Guice module.  In addition, a library Module may define additional Module dependencies that are to be pulled in.  Governator accomplishes in the bootstrap phase by having the application provide its direct dependencies as a list of Module classes.  Governator will handle installing the modules and pulling in any Module transitive dependencies. 
 
 h4. Usage
 
-An application is likely to define a single module which includes all of its direct dependent modules. This module can be added by calling builder.withAdditionalModuleClasses(ApplicationModule.class).  Note that more than one module can be added.
+An application is likely to define a single module class which includes all of its direct dependent modules. This module can be added by calling builder.withAdditionalModuleClasses(MyApplicationModule.class).  Note that more than one top level module can be added.
 
 ```java
 // This application has a dependency on LibraryAModule and LibraryBModule. 
 // It will pull in LibraryCModule transitively.  
 @Singleton
-public class ApplicationModule extends AbstractModule {
+public class MyApplicationModule extends AbstractModule {
    @Inject
    public ApplicationModule(LibraryAModule libA, LibraryBModule libB) {
    }
