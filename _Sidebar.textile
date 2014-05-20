@@ -18,6 +18,7 @@
 * [[Grapher Integration]]
 * [[JUnit Testing]]
 * [[FAQ]]
+* [[Best Practices]]
 * [[Spring, PicoContainer, Etc.]]
 * "Javadoc":http://netflix.github.com/governator/javadoc/index.html
 * [[End-to-End Examples]]
