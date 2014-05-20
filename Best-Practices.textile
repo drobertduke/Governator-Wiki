@@ -18,8 +18,39 @@ h2. Examples
 
 h3. Configuration driven binding
 
-Comings soon...
+The following example shows how to use multi bindings to create an extensible mechanism for constructing a polymorphic type.  Note that new implementation types can be added simply by adding another binding to the map binder.  This can be done in any Guice module
+
+```java
+public class FooProvider implements Provider<Foo> {
+   @Configuration(value="foo.type")
+   private String type;
+
+   private final Map<String, Provider<Foo>> providers;
+  
+   @Inject
+   FooProvider(Map<String, Provider<Foo>> providers) {
+       this.providers = providers;
+   }
+
+   public Foo get() {
+      return providers.get(type);
+   }
+}
+
+public class FooModule extends AbstractModule { 
+   public void configure() { 
+      MapBinder<String, Foo> foos = MapBinder.newMapBinder(binder(), String.class, Foo.class);
+      foos.addBinding("bar").to(FooBar.class);
+      foos.addBinding("goo").to(FooGoo.class);
+   }
+}
+```
 
 h3. Plugin architecture using multi-bindings
 
 Coming soon..
+
+h3. Interfaces first
+
+For injectable classes first create an interface and specify a default implementation using @ImplementedBy.  This will make it easier to override the implementation in a binding.  Note that binding in a guice module overrides @ImplementedBy without complaining about existing bindings.
+
