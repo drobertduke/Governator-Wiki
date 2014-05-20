@@ -16,6 +16,7 @@
 * [[LifecycleListener]]
 * [[Governator Phases]]
 * [[Grapher Integration]]
+* [[JUnit Testing]]
 * [[FAQ]]
 * [[Spring, PicoContainer, Etc.]]
 * "Javadoc":http://netflix.github.com/governator/javadoc/index.html
