@@ -46,3 +46,7 @@ You must bind any AutoBindProvider instances in the bootstrap module. See the [[
 h3. Completion
 
 At the end of Bootstrapping, Governator creates the bootstrap injector and gets the LifecycleManager instance which manages the main injection phase. Any bound configuration providers, lifecycle listeners and auto bind providers are injected into the LifecycleManager.
+
+h3. Testing
+
+JUnit @Rule for testing with the LifecycleManager.
