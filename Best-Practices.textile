@@ -12,7 +12,11 @@ Unless you are writing a generic framework most situations in which you want to 
 
 h3. Be careful with AutoBindSingleton
 
-When writing libraries keep in mind that classpath scanning of AutoBindSingleton classes will result in those classes being created eagerly when the injector is created.  Too broad a set of a packages to scan can result in unwanted singletons being created.  
+When writing libraries keep in mind that classpath scanning of AutoBindSingleton classes will result in those classes being created eagerly when the injector is created.  Too broad a set of a packages to scan can result in unwanted singletons being created. 
+
+h3. @Singleton Provider<T> is not @Singleton T
+
+Annotating a Provider<T> with @Singleton ensures that the Provider is a singleton and not the type T itself.  Every injection or call to .get() will return a new instance of T.  To make T a singleton either do bind(T.class).toProvider(TProvider.class).in(Scopes.Singleton) or implement SingletonProvider<T> instead of Provider<T>. 
  
 h2. Examples
 
