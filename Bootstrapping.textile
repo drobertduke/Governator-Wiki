@@ -27,6 +27,14 @@ The bootstrap module is passed a special Guice Binder that has an additional met
     public LinkedBindingBuilder<ConfigurationProvider> bindConfigurationProvider();
 ```
 
+h3. Module transformations
+
+The {@link ModuleTransform} provides a mechanism to apply a final transformation to all of the modules that will be installed on the main injector.  These transformations can include filtering or augmenting of bindings in the modules.  Several transformation recipes from Guice's wiki are included: {@link StripStaticInjections} and {@link WarnAboutStaticInjections}.  Binding overrides are also implemented using this mechanism (Coming soon...)
+
+h3. Post injector creation action
+
+The {@link PostInjectorAction} provides a mechanism to specify an operation to perform immediately after the injector is created but before it is returned.  This service is provided as part of Guice since it makes it easy to capture common post injector creation operation.  For example, log a report on all bindings {@link BindingReport}, create all bound singletons eagerly (for DEVELOPMENT mode) {@link CreateAllBoundSingletons}, auto-start the lifecycle manager {@link LifecycleManagerStarter}, generate a dot diagram {@link GrapherAction}, etc...
+
 h3. LifecycleListener
 
 You can bind a LifecycleListener in the bootstrap module. See the [[LifecycleListener]] wiki for details.
