@@ -6,6 +6,7 @@ Governator is a library of extensions and utilities that enhance "Google Guice":
 
 * Classpath scanning and automatic binding
 * Lifecycle management
+* Injector bootstrapping 
 * Configuration to field mapping
 * Field validation
 * Parallelized object warmup
@@ -22,6 +23,10 @@ Governator introduces the annotations <code>@AutoBindSingleton</code> and <code>
 h3. Lifecycle management
 
 Governator adds support for the standard annotations: <code>@PostConstruct</code>, <code>@PreDestroy</code> and <code>@Resource</code>. See the [[Lifecycle Management]] wiki for details.
+
+h3. Injector bootstrapping
+
+Governator simplifies bootstrapping the Guice injector by providing a single Builder on which various operations can be applied to determine the final set of modules used to create the injector.  These include, adding modules, overriding modules (coming soon), module transitive dependencies, suites of configuration sets, etc.
 
 h3. Configuration to field mapping
 
