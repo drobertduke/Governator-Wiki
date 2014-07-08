@@ -53,9 +53,13 @@ JUnit @Rule for testing with the LifecycleManager.
 
 h3. @Bootstrap
 
-@Bootstrap offers syntactic sugar on top of the LifecycleInjectorBuilder.  With @Bootstrap a single main application configuration class can contain multiple parameterized annotations that map to LifecycleInjectorBuilderSuites which configure the LifecycleInjectorBuilder.
+@Bootstrap offers syntactic sugar on top of the LifecycleInjectorBuilder.  With @Bootstrap a single main application configuration class can contain multiple parameterized annotations though which
+the LifecycleInjectorBuilder is configured.  The Injector can then be created with just one call.
 
-For example, the following MyApplicationConfiguration uses the @Application bootstrap annotations to create bindings based on the parameters of the @Application annotation.  In addition MyApplicationConfiguration is a Guice module and will be added to the injector.
+```java
+Inject injector = LifecycleInjector.bootstrap(MyApplicationConfiguration.class);
+```
+
 ```java
 @Application(name="foo", version="1.0")
 public class MyApplicationConfiguration extends AbstractModule {
@@ -65,11 +69,7 @@ public class MyApplicationConfiguration extends AbstractModule {
 }
 ```
 
-To bootstrap Guice a main function need only call
-
-```java
-Inject injector = LifecycleInjector.bootstrap(MyApplicationConfiguration.class);
-```
+In the above example MyApplicationConfiguration uses the @Application bootstrap annotations to create bindings based on the parameters of the @Application annotation.  In addition MyApplicationConfiguration is a Guice module and will be added to the injector.
 
 The @Application annotation exposes configuration options to the caller and specified a LifecycleInjectorBuilderSuite that will perform the actual bindings.
 
