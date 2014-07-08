@@ -50,3 +50,58 @@ At the end of Bootstrapping, Governator creates the bootstrap injector and gets 
 h3. Testing
 
 JUnit @Rule for testing with the LifecycleManager.
+
+h3. @Bootstrap
+
+@Bootstrap offers syntactic sugar on top of the LifecycleInjectorBuilder.  With @Bootstrap a single main application configuration class can contain multiple parameterized annotations that map to LifecycleInjectorBuilderSuites which configure the LifecycleInjectorBuilder.
+
+For example, the following MyApplicationConfiguration uses the @Application bootstrap annotations to create bindings based on the parameters of the @Application annotation.  In addition MyApplicationConfiguration is a Guice module and will be added to the injector.
+```java
+@Application(name="foo", version="1.0")
+public class MyApplicationConfiguration extends AbstractModule {
+   void configure() {
+      bind(SomeService.class).asEagerSingleton();
+   }
+}
+```
+
+To bootstrap Guice a main function need only call
+
+```java
+Inject injector = LifecycleInjector.bootstrap(MyApplicationConfiguration.class);
+```
+
+The @Application annotation exposes configuration options to the caller and specified a LifecycleInjectorBuilderSuite that will perform the actual bindings.
+
+```java
+@Documented
+@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE})
+@Bootstrap(ApplicationBootstrap.class)
+public static @interface Application {
+    String name();
+}
+```
+
+ApplicationBootstrap will be instantiated by Governator
+
+```java
+public static class ApplicationBootstrap implements LifecycleInjectorBuilderSuite {
+    private Application application;
+        
+    @Inject
+    public ApplicationBootstrap(Application application) {
+        this.application = application;
+    }
+        
+    @Override
+    public void configure(LifecycleInjectorBuilder builder) {
+        builder.withModules(new AbstractModule() {
+            @Override
+            protected void configure() {
+                bind(String.class).annotatedWith(Names.named("application")).toInstance(application.name());
+            }
+        });
+    }
+}
+```
