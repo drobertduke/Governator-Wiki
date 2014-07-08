@@ -26,7 +26,7 @@ Governator adds support for the standard annotations: <code>@PostConstruct</code
 
 h3. Injector bootstrapping
 
-Governator simplifies bootstrapping the Guice injector by providing a single Builder on which various operations can be applied to determine the final set of modules used to create the injector.  These include, adding modules, overriding modules (coming soon), module transitive dependencies, suites of configuration sets, module transformations, post injector creation hooks, etc.
+Governator simplifies bootstrapping the Guice injector by providing a single Builder on which various operations can be applied to determine the final set of modules used to create the injector.  These include, adding modules, overriding modules (coming soon), module transitive dependencies, suites of configuration sets, module transformations, post injector creation hooks, etc.  In addition Governator provides an annotation based approach to further simply bootstrapping an application via a single main configuration class.
 
 h3. Configuration to field mapping
 
