@@ -57,7 +57,7 @@ h3. @Bootstrap
 the LifecycleInjectorBuilder is configured.  The Injector can then be created with just one call.
 
 ```java
-Inject injector = LifecycleInjector.bootstrap(MyApplicationConfiguration.class);
+Injector injector = LifecycleInjector.bootstrap(MyApplicationConfiguration.class);
 ```
 
 ```java
