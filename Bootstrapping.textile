@@ -61,7 +61,7 @@ Injector injector = LifecycleInjector.bootstrap(MyApplicationConfiguration.class
 ```
 
 ```java
-@Application(name="foo", version="1.0")
+@Application(name="foo")
 public class MyApplicationConfiguration extends AbstractModule {
    void configure() {
       bind(SomeService.class).asEagerSingleton();
