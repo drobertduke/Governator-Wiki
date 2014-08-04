@@ -46,8 +46,11 @@ public class FooModule extends AbstractModule {
       MapBinder<String, Foo> foos = MapBinder.newMapBinder(binder(), String.class, Foo.class);
       foos.addBinding("bar").to(FooBar.class);
       foos.addBinding("goo").to(FooGoo.class);
+ 
+      bind(Foo.class).toProvider(FooProvider.class);
    }
 }
+
 ```
 
 h3. Plugin architecture using multi-bindings
