@@ -44,10 +44,10 @@ public class FooProvider implements Provider<Foo> {
 public class FooModule extends AbstractModule { 
    public void configure() { 
       MapBinder<String, Foo> foos = MapBinder.newMapBinder(binder(), String.class, Foo.class);
-      foos.addBinding("bar").to(FooBar.class);
-      foos.addBinding("goo").to(FooGoo.class);
+      foos.addBinding("bar").to(FooBar.class).in(Scopes.SINGLETON);
+      foos.addBinding("goo").to(FooGoo.class).in(Scopes.SINGLETON);
  
-      bind(Foo.class).toProvider(FooProvider.class);
+      bind(Foo.class).toProvider(FooProvider.class).in(Scopes.SINGLETON);
    }
 }
 
