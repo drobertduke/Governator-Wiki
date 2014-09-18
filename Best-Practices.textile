@@ -37,7 +37,7 @@ public class FooProvider implements Provider<Foo> {
    }
 
    public Foo get() {
-      return providers.get(type);
+      return providers.get(type).get();
    }
 }
 
