@@ -4,7 +4,7 @@ Governator is mostly transparent. Use Guice as you normally would but with enhan
 
 ```java
 Injector    injector = LifecycleInjector.builder()
-    .withModules(yourModules).createInjector();
+    .withModules(yourModules).build().createInjector();
 ```
 
 By creating your Injector this way various special annotations (@PostConstruct, etc.) will be processed. 
