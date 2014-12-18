@@ -4,7 +4,7 @@ Governator simplifies Guice module transitive dependencies using the @Modules an
 
 h2.  Defining module dependencies
 
-An application is likely to define a single module class which includes all of its direct dependent modules. This module can be added by calling builder.withAdditionalModuleClasses(MyApplicationModule.class).  This top level module's Guice module dependencies are specified using the @Modules annotation.
+An application is likely to define a single module class which includes all of its direct dependent modules. This top level module's Guice module dependencies are specified using the @Modules annotation.
  
 ```java
 // This application has a dependency on LibraryAModule and LibraryBModule. 
