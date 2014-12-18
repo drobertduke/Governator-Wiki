@@ -1,6 +1,6 @@
 h2. Overview
 
-Governator simplifies Guice module transitive dependencies using the @Modules annotation as an alternative to Guice's binder.install().  Using @Modules a module may specify it's dependent module classes instead of module instances supported by binder.install(). 
+Governator simplifies Guice module transitive dependencies using the @Modules annotation as an alternative to Guice's binder.install().  Using @Modules a module may specify its dependent module classes instead of module instances required by binder.install(). This is an alternative to @AutoBindSingleton which tends to pull in more bindings than an application requires or needs.
 
 h2.  Defining module dependencies
 
