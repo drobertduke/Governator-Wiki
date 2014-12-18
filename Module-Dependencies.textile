@@ -1,50 +1,54 @@
-Governator simplifies writing applications with composable libraries.  This is an alternative to AutoBindSingleton where a library defines complex bindings and its eager singletons in a Guice module.  In addition, a library Module may define additional Module dependencies that are to be pulled in.  Governator accomplishes in the bootstrap phase by having the application provide its direct dependencies as a list of Module classes.  Governator will handle installing the modules and pulling in any Module transitive dependencies. 
+h2. Overview
 
-h4. Usage
+Governator simplifies Guice module transitive dependencies using the @Modules annotation as an alternative to Guice's binder.install().  Using @Modules a module may specify it's dependent module classes instead of module instances supported by binder.install(). 
 
-An application is likely to define a single module class which includes all of its direct dependent modules. This module can be added by calling builder.withAdditionalModuleClasses(MyApplicationModule.class).  Note that more than one top level module can be added.
+h2.  Defining module dependencies
 
+An application is likely to define a single module class which includes all of its direct dependent modules. This module can be added by calling builder.withAdditionalModuleClasses(MyApplicationModule.class).  This top level module's Guice module dependencies are specified using the @Modules annotation.
+ 
 ```java
 // This application has a dependency on LibraryAModule and LibraryBModule. 
 // It will pull in LibraryCModule transitively.  
-@Singleton
+@Modules(include={LibraryAModule.class, LibraryBModule.class}
 public class MyApplicationModule extends AbstractModule {
-   @Inject
-   public ApplicationModule(LibraryAModule libA, LibraryBModule libB) {
-   }
-   ...
+    public void configure() { 
+        // Bindings for MyApplication
+    }
 }
 
-@Singleton
+@Modules(include={LibraryCModule.class})
 public class LibraryAModule extends AbstractModule {
-   @Inject
-   public LibraryAModule(LibraryCModule libC) {
-   }
+    public void configure() { 
+        // Bindings for LibraryA
+    }
 }
 
-@Singleton
+@Modules(include={LibraryCModule.class})
 public class LibraryBModule extends AbstractModule {
-   @Inject
-   public LibraryBModule(LibraryCModule libC) {
-   }
+    public void configure() { 
+        // Bindings for LibraryB
+    }
 }
 
+public class LibraryCModule extends AbstractModule {
+    public void configure() { 
+        // Bindings for LibraryC
+    }
+}
+
+// When creating the injector it is only necessary to specify the top level module
 LifecycleInjector.builder()
    .withAdditionalModuleClasses(ApplicationModule.class)
    .build().createInjector();
 ```
 
-h4. Overriding modules
+h2. Overriding bindings
 
-An entire module can be overridden by specifying a binding to the overriding module in a BootstrapModule.
+A complex module dependency graph may eventually create conflicting bindings.  Governator installs all bindings in module dependency order (derived from the @Modules annotations) just like Guice instantiates object in dependency order.  This property makes it possible to have each parent module override bindings from its transitive dependencies.  This feature is disabled by default by can be turned on like this,
 
 ```java
 LifecycleInjector.builder()
-   .withAdditionalBoostrapModule(new BootstrapModule() {
-       public void configure(BootstrapBinder binder) {
-           bind(LibraryCModule.class).to(AlternativeLibraryCModule.class);
-       }
-   })
-   .withAdditionalModuleClasses(ApplicationModule.class);
+    .withModuleTransformer(new OverrideAllDuplicateBindings())
+    ...
 ```
 
