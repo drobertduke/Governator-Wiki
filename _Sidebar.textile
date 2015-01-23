@@ -12,7 +12,7 @@
 * [[Field Validation]]
 * [[Lazy Singleton]]
 * [[Concurrent Singleton]]
-* "Generic Binding Annotations":https://github.com/Netflix/governator/tree/master/src/main/java/com/netflix/governator/annotations/binding
+* "Generic Binding Annotations":https://github.com/Netflix/governator/tree/master/governator-core/src/main/java/com/netflix/governator/annotations/binding
 * [[LifecycleListener]]
 * [[Governator Phases]]
 * [[Grapher Integration]]
