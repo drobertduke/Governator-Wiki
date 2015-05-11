@@ -41,6 +41,17 @@ public class FooProvider implements Provider<Foo> {
    }
 }
 
+// - or -
+
+public class MyMainModule extends AbstractModule {
+   @Provides
+   @Singleton
+   public Foo getFoo(Config config, Map<String, Provider<Foo>> impls) {
+       return impls.get(config.getString("foo.type")).get();
+   }
+}
+
+
 public class FooModule extends AbstractModule { 
    public void configure() { 
       MapBinder<String, Foo> foos = MapBinder.newMapBinder(binder(), String.class, Foo.class);
