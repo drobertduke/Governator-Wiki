@@ -41,9 +41,12 @@ public class FooProvider implements Provider<Foo> {
    }
 }
 
-// - or -
-
 public class MyMainModule extends AbstractModule {
+   protected void configure() {
+       bind(Foo.class).toProvider(FooProvider.class).in(Scopes.SINGLETON);
+   }
+
+   // - or - 
    @Provides
    @Singleton
    public Foo getFoo(Config config, Map<String, Provider<Foo>> impls) {
@@ -52,16 +55,19 @@ public class MyMainModule extends AbstractModule {
 }
 
 
-public class FooModule extends AbstractModule { 
+public class FooModule1 extends AbstractModule { 
    public void configure() { 
-      MapBinder<String, Foo> foos = MapBinder.newMapBinder(binder(), String.class, Foo.class);
-      foos.addBinding("bar").to(FooBar.class).in(Scopes.SINGLETON);
-      foos.addBinding("goo").to(FooGoo.class).in(Scopes.SINGLETON);
- 
-      bind(Foo.class).toProvider(FooProvider.class).in(Scopes.SINGLETON);
+      MapBinder.newMapBinder(binder(), String.class, Foo.class)
+               .to(FooImpl1.class).in(Scopes.SINGLETON);
    }
 }
 
+public class FooModule2 extends AbstractModule { 
+   public void configure() { 
+      MapBinder.newMapBinder(binder(), String.class, Foo.class)
+               .to(FooImpl2.class).in(Scopes.SINGLETON);
+   }
+}
 ```
 
 h3. Plugin architecture using multi-bindings
