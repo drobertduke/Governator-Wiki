@@ -58,6 +58,7 @@ public class MyMainModule extends AbstractModule {
 public class FooModule1 extends AbstractModule { 
    public void configure() { 
       MapBinder.newMapBinder(binder(), String.class, Foo.class)
+               .addBinding("foo1")
                .to(FooImpl1.class).in(Scopes.SINGLETON);
    }
 }
@@ -65,6 +66,7 @@ public class FooModule1 extends AbstractModule {
 public class FooModule2 extends AbstractModule { 
    public void configure() { 
       MapBinder.newMapBinder(binder(), String.class, Foo.class)
+               .addBinding("foo2")
                .to(FooImpl2.class).in(Scopes.SINGLETON);
    }
 }
