@@ -1,5 +1,5 @@
------
 Deprecated
+
 -----
 
 @AutoBindSingleton is deprecated in favor of using bindings in Guice modules.  @AutoBindSingleton has been the source of numerous problems since it frequently results in unwanted classes being instantiated.  Furthermore, @AutoBindSingleton is misleading since it is not a proper Guice scope.  For example, any @AutoBindSingleton annotated class that does not also have the @Singleton annotation does not exhibit singleton behavior when that class was not pulled in via classpath scanning. 
