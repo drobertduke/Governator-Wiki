@@ -1,6 +1,5 @@
 * [[Home]]
 * [[Getting Started]]
-* "Examples":https://github.com/Netflix/governator/tree/master/governator-core/src/main/examples
 * [[Bootstrapping]]
 * [[Lifecycle Management]]
 * [[Auto Binding]]
@@ -12,7 +11,6 @@
 * [[Field Validation]]
 * [[Lazy Singleton]]
 * [[Concurrent Singleton]]
-* "Generic Binding Annotations":https://github.com/Netflix/governator/tree/master/governator-core/src/main/java/com/netflix/governator/annotations/binding
 * [[LifecycleListener]]
 * [[Governator Phases]]
 * [[Grapher Integration]]

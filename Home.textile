@@ -16,10 +16,6 @@ Governator is a library of extensions and utilities that enhance "Google Guice":
 
 h2. Features
 
-h3. Classpath scanning and automatic binding
-
-Governator introduces the annotations <code>@AutoBindSingleton</code> and <code>@AutoBind</code>. See the [[Auto Binding]] wiki for details.
-
 h3. Lifecycle management
 
 Governator adds support for the standard annotations: <code>@PostConstruct</code>, <code>@PreDestroy</code> and <code>@Resource</code>. See the [[Lifecycle Management]] wiki for details.
